@@ -4,7 +4,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-ja="Native Sensei English School: マンツーマンレッスンを、コスパ最強で" data-en="Native Sensei English School: The Best Value in 1-on-1 Tutoring">Native Sensei English School: マンツーマンレッスンを、コスパ最強で</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+
+    <script>
+        function setLanguage(lang) {
+            // 1. Đặt ngôn ngữ hiện tại của trang
+            document.documentElement.lang = lang; 
+
+            // 2. Cập nhật trạng thái active của nút ngôn ngữ
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Kiểm tra và thêm lớp 'active'
+            const langButton = document.getElementById('lang-' + lang);
+            if (langButton) {
+                langButton.classList.add('active');
+            }
+
+            // 3. Thay đổi nội dung của tất cả các phần tử có thuộc tính data-
+            document.querySelectorAll('[data-ja], [data-en]').forEach(element => {
+                let newContent;
+                if (lang === 'ja') {
+                    newContent = element.getAttribute('data-ja');
+                } else if (lang === 'en') {
+                    newContent = element.getAttribute('data-en');
+                }
+
+                // Cập nhật nội dung
+                if (element.tagName === 'TITLE') {
+                    document.title = newContent;
+                } else if (newContent) {
+                    element.innerHTML = newContent;
+                }
+            });
+
+            // Lưu lựa chọn ngôn ngữ vào bộ nhớ trình duyệt để lần sau tải lại
+            localStorage.setItem('selectedLang', lang);
+        }
+
+        // Tự động tải ngôn ngữ đã chọn khi trang được tải lần đầu
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLang') || 'ja'; // Mặc định là Tiếng Nhật
+            setLanguage(savedLang);
+        });
+    </script>
+    </head>
 <body>
 
     <header class="main-header">
@@ -70,32 +113,5 @@
         <p class="copyright">&copy; 2025 Native Sensei English School. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        function setLanguage(lang) {
-            // 1. Đặt ngôn ngữ hiện tại của trang
-            document.documentElement.lang = lang; 
-
-            // 2. Cập nhật trạng thái active của nút ngôn ngữ
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById('lang-' + lang).classList.add('active');
-
-            // 3. Thay đổi nội dung của tất cả các phần tử có thuộc tính data-
-            document.querySelectorAll('[data-ja], [data-en]').forEach(element => {
-                let newContent;
-                if (lang === 'ja') {
-                    newContent = element.getAttribute('data-ja');
-                } else if (lang === 'en') {
-                    newContent = element.getAttribute('data-en');
-                }
-
-                // Cập nhật cả nội dung và tiêu đề trang (title)
-                if (element.tagName === 'TITLE') {
-                    document.title = newContent;
-                } else if (newContent) {
-                    element.innerHTML = newContent;
-                }
-            });
-
-            // Lưu lựa chọn ngôn ngữ vào bộ nhớ trình duyệt để
+</body>
+</html>
