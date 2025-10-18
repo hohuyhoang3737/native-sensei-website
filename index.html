@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="ja"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Native Sensei English School: Tiếng Anh Vững Vàng Cho Trẻ Em Việt Tại Nhật</title>
+    <title>Native Sensei English School: マンツーマンレッスンを、コスパ最強で</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function setLanguage(lang) {
+            // Đây chỉ là code cơ bản. Để chuyển đổi thực tế cần JS phức tạp hơn 
+            // hoặc công cụ dịch vụ. Hiện tại, code chỉ thay đổi nhãn.
+            document.documentElement.lang = lang.toLowerCase();
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('lang-' + lang.toLowerCase()).classList.add('active');
+            alert("Chuyển sang chế độ " + lang + ". Chức năng chuyển đổi nội dung sẽ được thêm vào sau!");
+        }
+    </script>
 </head>
 <body>
 
@@ -14,39 +25,62 @@
             <span class="school-name">NATIVE SENSEI English School</span>
         </div>
         <nav class="main-nav">
-            <a href="#chuong-trinh">Chương trình học</a>
-            <a href="#giao-vien">Giáo viên</a>
-            <a href="#gia-ca">Giá cả</a>
-            <a href="#lien-he" class="nav-cta-btn">Học thử Miễn phí</a>
+            <a href="#program" data-ja="プログラム" data-en="Program">プログラム</a>
+            <a href="#teachers" data-ja="講師紹介" data-en="Teachers">講師紹介</a>
+            <a href="#pricing" data-ja="料金" data-en="Pricing">料金</a>
+            <a href="#contact" data-ja="お問い合わせ" data-en="Contact Us" class="nav-cta-btn">お問い合わせ</a>
         </nav>
+        
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active" id="lang-ja" onclick="setLanguage('JA');">JA</a>
+            <a href="#" class="lang-btn" id="lang-en" onclick="setLanguage('EN');">EN</a>
+        </div>
     </header>
 
-    <section class="hero-section">
+    <section class="hero-section" id="hero">
         <div class="hero-content">
-            <h1 class="hero-title">
-                Tiếng Anh 1-kèm-1: Nền Tảng Vững Chắc Cho Trẻ Em Việt Tại Nhật Bản.
+            <h1 class="hero-title" data-ja="日本でのキャリアを加速させる！マンツーマン英語レッスン" data-en="Accelerate Your Career in Japan with 1-on-1 English Lessons">
+                日本でのキャリアを加速させる！マンツーマン英語レッスン
             </h1>
-
-            <h2 class="hero-slogan">
-                Chất lượng Tốt nhất – Chi phí Hợp lý (Best Value).
+            
+            <h2 class="hero-slogan" data-ja="コスパ最強のオンライン英会話" data-en="The Best Value in Online 1-on-1 Tutoring">
+                コスパ最強のオンライン英会話
             </h2>
-
-            <p class="hero-benefits">
-                Giúp con tự tin giao tiếp, vượt qua rào cản ngôn ngữ với Sensei thân thiện, kiên nhẫn.
+            
+            <p class="hero-benefits" data-ja="フィリピンの専門講師と、時間と場所を選ばずにあなたのペースで学習できます。" data-en="Learn at your own pace, anytime, anywhere, with our specialized Filipino Sensei.">
+                フィリピンの専門講師と、時間と場所を選ばずにあなたのペースで学習できます。
             </p>
-
-            <a href="#dang-ky" class="main-cta-btn">
-                Đăng Ký Buổi Học Thử MIỄN PHÍ Ngay!
+            
+            <a href="#contact" class="main-cta-btn" data-ja="無料体験レッスンに申し込む" data-en="Book Your FREE Trial Lesson Now!">
+                無料体験レッスンに申し込む
             </a>
-
-            <p class="cta-note">
-                (Đăng ký không mất phí, không cam kết)
+            
+            <p class="cta-note" data-ja="(登録無料、キャンセル自由)" data-en="(Free registration, no commitment)">
+                (登録無料、キャンセル自由)
             </p>
         </div>
         <div class="hero-image-placeholder">
-            <img src="Media.jfif" alt="Giáo viên Native Sensei thân thiện" class="main-hero-img">
+            <img src="Media.jfif" alt="Online English Teacher" class="main-hero-img">
         </div>
     </section>
+
+    <section class="problem-section" id="problem">
+        <h2 data-ja="英会話の学習で、こんな悩みはありませんか？" data-en="Are you facing these common English learning problems in Japan?">
+            英会話の学習で、こんな悩みはありませんか？
+        </h2>
+        </section>
+    
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <h4 data-ja="SNSで繋がる" data-en="Connect with Us">SNSで繋がる</h4>
+                <a href="https://facebook.com/yourpagename" target="_blank" class="social-icon">Facebook Fanpage</a>
+                <a href="https://zalo.me/yourid" target="_blank" class="social-icon">Zalo</a>
+                <a href="https://line.me/ti/p/@yourid" target="_blank" class="social-icon">Line Official</a>
+            </div>
+            </div>
+        <p class="copyright">&copy; 2025 Native Sensei English School. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
