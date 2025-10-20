@@ -194,7 +194,7 @@ a {
     border: 1px solid #ffcccb; 
     border-radius: 10px;
     padding: 25px;
-    /* ĐẢM BẢO 2 CỘT: 50% trừ đi 1 nửa khoảng cách gap (25px/2 = 12.5px) */
+    /* LỆNH KHẮC PHỤC LỖI 2x2 */
     width: calc(50% - 12.5px); 
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
@@ -247,7 +247,7 @@ a {
     padding: 30px 20px;
     background-color: white; 
     border-radius: 12px;
-    border: 1px solid var(--light-bg); /* Giữ viền nhẹ */
+    border: 1px solid var(--light-bg); 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s;
 }
@@ -406,9 +406,9 @@ a {
         font-size: 1.1rem;
     }
     .problem-list {
-        flex-direction: column; /* Chuyển về 1 cột trên mobile */
+        flex-direction: column; 
     }
     .problem-item {
-        width: 100%; /* Cho phép 100% chiều rộng trên mobile */
+        width: 100%; 
     }
 }
