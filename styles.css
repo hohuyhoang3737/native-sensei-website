@@ -159,7 +159,7 @@ a {
     color: #666;
 }
 
-/* 2. PROBLEM SECTION (CẢI THIỆN LẠI GIAO DIỆN) */
+/* 2. PROBLEM SECTION (ÁP DỤNG CSS GRID) */
 .problem-section {
     padding: 60px 5%;
     text-align: center;
@@ -172,19 +172,20 @@ a {
 }
 
 .problem-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px; /* Khoảng cách giữa các ô */
+    display: grid; /* SỬ DỤNG GRID ĐỂ ĐẢM BẢO LAYOUT 2X2 */
+    grid-template-columns: repeat(2, 1fr); /* 2 CỘT BẰNG NHAU */
+    gap: 25px; 
     margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .problem-item {
-    background-color: #fff9f9; /* Nền màu RẤT NHẠT */
-    border: 1px solid #ffcccb; /* Đường viền màu hồng nhạt/cảnh báo */
+    background-color: #fff9f9; 
+    border: 1px solid #ffcccb; 
     border-radius: 10px;
     padding: 25px;
-    width: calc(50% - 25px); /* ĐẢM BẢO LAYOUT 2 CỘT */
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
     font-weight: 500;
@@ -195,8 +196,8 @@ a {
 
 /* ĐỊNH KIỂU ICON VẤN ĐỀ */
 .icon-problem {
-    color: var(--secondary-color); /* Màu cam đất nổi bật */
-    font-size: 2rem; /* Icon lớn hơn */
+    color: var(--secondary-color); 
+    font-size: 2rem; 
     margin-bottom: 15px;
     display: block; 
     width: 100%;
@@ -205,7 +206,7 @@ a {
 .problem-item p {
     font-size: 1rem;
     font-weight: bold; 
-    color: var(--primary-color); /* Màu chữ xanh navy */
+    color: var(--primary-color); 
 }
 
 .problem-transition {
@@ -218,7 +219,7 @@ a {
 /* 3. SOLUTION SECTION */
 .solution-section {
     padding: 80px 5%;
-    background-color: var(--light-bg); /* Nền xám nhạt */
+    background-color: var(--light-bg); 
     text-align: center;
 }
 
@@ -235,7 +236,7 @@ a {
     text-align: center;
     padding: 30px 20px;
     background-color: white; 
-    border: 3px solid var(--secondary-color); /* Đường viền cam nổi bật */
+    border: 3px solid var(--secondary-color); 
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s;
@@ -349,6 +350,10 @@ a {
         flex-direction: column;
         gap: 20px;
     }
+    .problem-list {
+        grid-template-columns: 1fr; /* CHUYỂN VỀ 1 CỘT KHI CHIỀU RỘNG NHỎ HƠN 992PX */
+        max-width: 500px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -393,9 +398,5 @@ a {
     }
     .main-cta-btn {
         font-size: 1.1rem;
-    }
-    /* ĐẢM BẢO LAYOUT 1 CỘT TRÊN MOBILE */
-    .problem-item {
-        width: 100%; 
     }
 }
