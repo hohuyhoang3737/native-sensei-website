@@ -159,7 +159,7 @@ a {
     color: #666;
 }
 
-/* 2. PROBLEM SECTION (ÁP DỤNG CSS GRID) */
+/* 2. PROBLEM SECTION */
 .problem-section {
     padding: 60px 5%;
     text-align: center;
@@ -172,46 +172,22 @@ a {
 }
 
 .problem-list {
-    display: flex; /* Dùng Flexbox */
+    display: flex; /* SỬ DỤNG FLEXBOX */
     justify-content: center;
-    flex-wrap: wrap; /* Cho phép các mục xuống dòng */
-    gap: 25px; 
+    flex-wrap: wrap; 
+    gap: 25px; /* Khoảng cách giữa các ô */
     margin-bottom: 30px;
-    max-width: 1000px;
+    max-width: 1000px; /* Giới hạn chiều rộng */
     margin-left: auto;
     margin-right: auto;
 }
 
 .problem-item {
-    /* Đảm bảo mỗi ô chiếm gần 50% */
-    width: calc(50% - 15px); /* Tính toán lại kích thước: 50% trừ đi một phần gap */
-    /* ... (Giữ nguyên các thuộc tính khác của problem-item) ... */
     background-color: #fff9f9; 
     border: 1px solid #ffcccb; 
     border-radius: 10px;
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-color); 
-    text-align: center;
-    line-height: 1.6;
-}
-
-/* Trong Media Query (@media (max-width: 768px)) */
-/* Cần ĐẢM BẢO width của .problem-item chuyển về 100% */
-@media (max-width: 768px) {
-    /* ... (các phần khác) ... */
-    .problem-item {
-        width: 100%; /* Đảm bảo 1 cột trên mobile */
-    }
-}
-
-.problem-item {
-    background-color: #fff9f9; 
-    border: 1px solid #ffcccb; 
-    border-radius: 10px;
-    padding: 25px;
+    width: calc(50% - 15px); /* Kích thước 2 cột */
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
     font-weight: 500;
@@ -242,7 +218,7 @@ a {
     font-weight: bold;
 }
 
-/* 3. SOLUTION SECTION */
+/* 3. SOLUTION SECTION (ĐÃ XÓA VIỀN MÀU CAM) */
 .solution-section {
     padding: 80px 5%;
     background-color: var(--light-bg); 
@@ -262,8 +238,8 @@ a {
     text-align: center;
     padding: 30px 20px;
     background-color: white; 
-    border: 3px solid var(--secondary-color); 
     border-radius: 12px;
+    /* ĐÃ XÓA: border: 3px solid var(--secondary-color); */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s;
 }
@@ -376,10 +352,6 @@ a {
         flex-direction: column;
         gap: 20px;
     }
-    .problem-list {
-        grid-template-columns: 1fr; /* CHUYỂN VỀ 1 CỘT KHI CHIỀU RỘNG NHỎ HƠN 992PX */
-        max-width: 500px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -425,5 +397,10 @@ a {
     .main-cta-btn {
         font-size: 1.1rem;
     }
-
+    .problem-list {
+        flex-direction: column; /* Chuyển về 1 cột trên mobile */
+    }
+    .problem-item {
+        width: 100%; /* Cho phép 100% chiều rộng trên mobile */
+    }
 }
