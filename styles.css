@@ -172,12 +172,12 @@ a {
 }
 
 .problem-list {
-    display: flex; /* SỬ DỤNG FLEXBOX cho 2x2 */
+    display: flex; /* SỬ DỤNG FLEXBOX */
     justify-content: center;
     flex-wrap: wrap; 
-    gap: 25px; 
+    gap: 25px; /* Khoảng cách giữa các ô */
     margin-bottom: 30px;
-    max-width: 1000px; 
+    max-width: 1000px; /* Giới hạn chiều rộng */
     margin-left: auto;
     margin-right: auto;
 }
@@ -239,8 +239,7 @@ a {
     padding: 30px 20px;
     background-color: white; 
     border-radius: 12px;
-    /* ĐÃ XÓA VIỀN CAM - THAY THẾ BẰNG BORDER NHẸ */
-    border: 1px solid var(--light-bg); 
+    /* ĐÃ XÓA: border: 3px solid var(--secondary-color); */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s;
 }
