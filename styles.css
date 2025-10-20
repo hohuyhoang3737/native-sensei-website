@@ -184,7 +184,7 @@ a {
     border: 1px solid var(--light-bg);
     border-radius: 8px;
     padding: 20px;
-    width: 45%; /* 2 cột trên desktop */
+    width: 45%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     font-size: 1.1rem;
     font-weight: 500;
@@ -199,10 +199,10 @@ a {
     font-weight: bold;
 }
 
-/* 3. SOLUTION SECTION */
+/* 3. SOLUTION SECTION (ĐÃ CẢI THIỆN ĐƠN ĐIỆU) */
 .solution-section {
     padding: 80px 5%;
-    background-color: white;
+    background-color: var(--light-bg); /* Đổi sang nền xám nhạt để nổi bật các ô */
     text-align: center;
 }
 
@@ -218,28 +218,36 @@ a {
     flex: 1;
     text-align: center;
     padding: 30px 20px;
-    border: 1px solid var(--light-bg);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background-color: white; /* Nền trắng cho các ô */
+    border: 3px solid var(--secondary-color); /* Thêm đường viền cam nổi bật */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bóng mạnh hơn */
     transition: transform 0.3s;
 }
 
 .solution-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px); /* Nhảy lên khi di chuột */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .solution-item h3 {
     font-size: 1.4rem;
-    color: var(--secondary-color);
+    color: var(--primary-color); /* Tiêu đề màu xanh Navy */
     margin-bottom: 15px;
-    position: relative;
+    font-weight: 700;
+}
+
+/* ĐỊNH KIỂU CHO ICON */
+.icon-solution {
+    color: var(--secondary-color); /* Màu cam nổi bật */
+    font-size: 1.6rem;
+    margin-right: 10px;
 }
 
 .solution-item p {
     font-size: 1rem;
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7; /* Tăng khoảng cách dòng */
 }
 
 /* Định kiểu cho CTA phụ */
@@ -256,7 +264,7 @@ a {
 }
 
 .secondary-cta-btn:hover {
-    background-color: #0d1259; /* Màu xanh đậm hơn khi hover */
+    background-color: #0d1259; 
 }
 
 
@@ -294,6 +302,20 @@ a {
 }
 
 .social-icon:hover {
+    color: var(--secondary-color);
+}
+
+.social-icon i {
+    margin-right: 8px;
+}
+
+.policy-link {
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.policy-link:hover {
     color: var(--secondary-color);
 }
 
@@ -357,6 +379,6 @@ a {
         font-size: 1.1rem;
     }
     .problem-item {
-        width: 100%; /* 1 cột trên mobile */
+        width: 100%; 
     }
 }
