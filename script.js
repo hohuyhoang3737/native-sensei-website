@@ -2,11 +2,12 @@ function setLanguage(lang) {
     // 1. Đặt ngôn ngữ hiện tại của trang
     document.documentElement.lang = lang; 
 
-    // 2. Cập nhật trạng thái active của nút ngôn ngữ
+    // 2. Cập nhật trạng thái active của nút ngôn ngữ (Cần phải kiểm tra nhãn hiển thị)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    const langButton = document.getElementById('lang-' + lang);
+    // Tìm nút dựa trên thuộc tính data-lang-code để tránh phụ thuộc vào nhãn hiển thị
+    const langButton = document.querySelector(`.lang-btn[data-lang-code="${lang}"]`);
     if (langButton) {
         langButton.classList.add('active');
     }
