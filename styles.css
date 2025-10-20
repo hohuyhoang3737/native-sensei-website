@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION */
+/* 1. HEADER & NAVIGATION (ĐÃ CẬP NHẬT BRANDING) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -49,11 +49,25 @@ a {
     margin-right: 10px;
 }
 
-.school-name {
-    font-size: 1.2rem;
-    font-weight: bold;
+/* ĐỊNH KIỂU BRANDING MỚI */
+.brand-text {
+    display: flex;
+    flex-direction: column; /* Xếp dọc các dòng chữ */
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-size: 1.5rem; /* Tăng cỡ chữ cho tên chính */
+    font-weight: 900; /* In đậm cực mạnh */
     color: var(--primary-color);
 }
+
+.sub-brand {
+    font-size: 0.9rem; /* Cỡ chữ nhỏ hơn cho "English School" */
+    font-weight: 500;
+    color: #666; /* Màu xám nhẹ hơn */
+}
+/* KẾT THÚC BRANDING MỚI */
 
 .main-nav a {
     margin-left: 25px;
@@ -166,7 +180,7 @@ a {
     color: #666;
 }
 
-/* 2. PROBLEM SECTION (ĐÃ FIX LAYOUT 2X2 DÙNG FLEXBOX) */
+/* 2. PROBLEM SECTION */
 .problem-section {
     padding: 60px 5%;
     text-align: center;
@@ -194,8 +208,7 @@ a {
     border: 1px solid #ffcccb; 
     border-radius: 10px;
     padding: 25px;
-    /* LỆNH KHẮC PHỤC LỖI 2x2 */
-    width: calc(50% - 12.5px); 
+    width: calc(50% - 12.5px); /* Kích thước 2 cột */
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
     font-weight: 500;
@@ -409,6 +422,6 @@ a {
         flex-direction: column; 
     }
     .problem-item {
-        width: 100%; 
+        width: 100% !important; 
     }
 }
