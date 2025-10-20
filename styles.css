@@ -159,7 +159,7 @@ a {
     color: #666;
 }
 
-/* 2. PROBLEM SECTION (ĐÃ CẢI THIỆN GIAO DIỆN) */
+/* 2. PROBLEM SECTION (CẢI THIỆN LẠI GIAO DIỆN) */
 .problem-section {
     padding: 60px 5%;
     text-align: center;
@@ -175,17 +175,17 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px; /* Tăng khoảng cách */
+    gap: 25px; /* Khoảng cách giữa các ô */
     margin-bottom: 30px;
 }
 
 .problem-item {
-    background-color: #fff9f9; /* Nền màu RẤT NHẠT để tạo cảm giác "vấn đề" */
+    background-color: #fff9f9; /* Nền màu RẤT NHẠT */
     border: 1px solid #ffcccb; /* Đường viền màu hồng nhạt/cảnh báo */
     border-radius: 10px;
     padding: 25px;
-    width: 45%; 
-    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); /* Bóng nhẹ màu cam đất */
+    width: calc(50% - 25px); /* ĐẢM BẢO LAYOUT 2 CỘT */
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-color); 
@@ -394,6 +394,7 @@ a {
     .main-cta-btn {
         font-size: 1.1rem;
     }
+    /* ĐẢM BẢO LAYOUT 1 CỘT TRÊN MOBILE */
     .problem-item {
         width: 100%; 
     }
