@@ -175,7 +175,7 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px; 
+    gap: 25px; /* Tăng khoảng cách */
     margin-bottom: 30px;
 }
 
