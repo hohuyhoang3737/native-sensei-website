@@ -172,13 +172,39 @@ a {
 }
 
 .problem-list {
-    display: grid; /* SỬ DỤNG GRID ĐỂ ĐẢM BẢO LAYOUT 2X2 */
-    grid-template-columns: repeat(2, 1fr); /* 2 CỘT BẰNG NHAU */
+    display: flex; /* Dùng Flexbox */
+    justify-content: center;
+    flex-wrap: wrap; /* Cho phép các mục xuống dòng */
     gap: 25px; 
     margin-bottom: 30px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.problem-item {
+    /* Đảm bảo mỗi ô chiếm gần 50% */
+    width: calc(50% - 15px); /* Tính toán lại kích thước: 50% trừ đi một phần gap */
+    /* ... (Giữ nguyên các thuộc tính khác của problem-item) ... */
+    background-color: #fff9f9; 
+    border: 1px solid #ffcccb; 
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color); 
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Trong Media Query (@media (max-width: 768px)) */
+/* Cần ĐẢM BẢO width của .problem-item chuyển về 100% */
+@media (max-width: 768px) {
+    /* ... (các phần khác) ... */
+    .problem-item {
+        width: 100%; /* Đảm bảo 1 cột trên mobile */
+    }
 }
 
 .problem-item {
@@ -399,4 +425,5 @@ a {
     .main-cta-btn {
         font-size: 1.1rem;
     }
+
 }
