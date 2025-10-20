@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI MÀU SẮC VÀ XUỐNG DÒNG) */
+/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI MÀU VÀ XUỐNG DÒNG) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -66,7 +66,7 @@ a {
 .sub-brand {
     font-size: 0.9rem; /* Cỡ chữ nhỏ hơn cho "English School" */
     font-weight: 500;
-    color: #666; /* Màu xám nhẹ hơn */
+    color: var(--primary-color); /* MÀU XANH NAVY ĐẬM (ĐÃ CHỈNH LẠI) */
 }
 /* KẾT THÚC BRANDING MỚI */
 
@@ -182,7 +182,7 @@ a {
     color: #666;
 }
 
-/* 2. PROBLEM SECTION (ĐÃ FIX LAYOUT 2X2 DÙNG FLEXBOX) */
+/* 2. PROBLEM SECTION */
 .problem-section {
     padding: 60px 5%;
     text-align: center;
