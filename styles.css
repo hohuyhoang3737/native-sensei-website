@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI MÀU VÀ XUỐNG DÒNG) */
+/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI CĂN CHỈNH NÚT CAM) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -41,6 +41,7 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
+    flex-shrink: 0; 
 }
 
 .logo-img {
@@ -52,38 +53,52 @@ a {
 /* ĐỊNH KIỂU BRANDING MỚI */
 .brand-text {
     display: flex;
-    flex-direction: column; /* Xếp dọc các dòng chữ */
+    flex-direction: column; 
     line-height: 1.1;
 }
 
 .brand-name {
-    font-size: 1.5rem; /* Tăng cỡ chữ cho tên chính */
-    font-weight: 900; /* In đậm cực mạnh */
+    font-size: 1.5rem; 
+    font-weight: 900; 
     color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .sub-brand {
-    font-size: 0.9rem; /* Cỡ chữ nhỏ hơn cho "English School" */
+    font-size: 0.9rem; 
     font-weight: 500;
-    color: var(--primary-color); /* MÀU XANH NAVY ĐẬM (ĐÃ CHỈNH LẠI) */
+    color: var(--primary-color); 
 }
 /* KẾT THÚC BRANDING MỚI */
 
+/* MENU NAV: FIX CĂN CHỈNH TRÊN PC */
+.main-nav {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* ĐÃ FIX: Đảm bảo tất cả các mục được căn giữa theo chiều dọc */
+    flex-wrap: nowrap; 
+    flex-grow: 1; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
 
 .main-nav a {
-    margin-left: 25px;
+    margin: 0 10px; 
     font-size: 1rem;
     font-weight: 500;
+    white-space: nowrap; 
+    /* Đặt padding bằng 0 để nút không bị đẩy lên */
+    padding: 0; 
 }
 
 .nav-cta-btn {
     background-color: var(--secondary-color);
     color: white !important;
-    padding: 8px 15px;
+    padding: 8px 15px; /* Giữ padding riêng cho nút này */
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-left: 25px; 
+    margin-left: 10px; 
+    /* RẤT QUAN TRỌNG: Loại bỏ align-items: center; đã sửa lỗi, giờ bỏ style này đi */
 }
 
 .nav-cta-btn:hover {
@@ -93,6 +108,7 @@ a {
 /* CSS cho Language Switcher */
 .lang-switcher {
     margin-left: 30px; 
+    flex-shrink: 0; 
 }
 
 .lang-btn {
@@ -380,28 +396,45 @@ a {
 @media (max-width: 768px) {
     .main-header {
         flex-wrap: wrap; 
-    }
-    .main-nav {
-        margin-top: 10px;
-        order: 3; 
-        width: 100%;
-        text-align: center;
-    }
-    .main-nav a {
-        margin: 0 10px;
-        display: inline-block;
-    }
-    .lang-switcher {
-        order: 2;
-        margin-left: auto;
+        padding: 10px 5%;
     }
     .logo-container {
-        order: 1;
-        width: auto;
+        width: 45%; 
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+    
+    /* MENU NAV: FIX BỐ CỤC ĐỂ 4 NÚT HIỂN THỊ TRÊN MOBILE */
+    .main-nav {
+        display: flex !important; 
+        order: 3; 
+        width: 100%; 
+        justify-content: space-around; 
+        margin: 10px 0; 
+        padding-top: 10px;
+        border-top: 1px solid var(--light-bg); 
+    }
+    .main-nav a {
+        margin: 5px 2px; 
+        padding: 5px 5px;
+        font-size: 0.8rem; 
+        line-height: 1;
+    }
+    .nav-cta-btn {
+        margin-left: 5px;
+        padding: 5px 10px;
+    }
+    
+    .lang-switcher {
+        order: 2;
+        width: 55%; 
+        display: flex;
+        justify-content: flex-end; 
     }
     .hero-section {
         flex-direction: column;
         text-align: center;
+        padding: 40px 5%; 
     }
     .hero-content {
         max-width: 100%;
@@ -425,5 +458,10 @@ a {
     }
     .problem-item {
         width: 100% !important; 
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
     }
 }
