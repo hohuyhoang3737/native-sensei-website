@@ -70,18 +70,18 @@ a {
 }
 /* KẾT THÚC BRANDING MỚI */
 
-
+/* MENU NAV: Mặc định trên desktop */
 .main-nav {
     display: flex; /* Dùng Flexbox để xếp các nút ngang hàng */
-    justify-content: center; /* Căn giữa các nút */
-    flex-wrap: wrap; /* Cho phép các nút xuống dòng nếu không đủ chỗ */
+    justify-content: center; 
+    flex-wrap: nowrap; /* KHÔNG cho phép xuống dòng trên desktop */
 }
 
 .main-nav a {
-    margin: 0 10px; /* Giảm khoảng cách để chứa được 4 nút */
+    margin: 0 10px; 
     font-size: 1rem;
     font-weight: 500;
-    white-space: nowrap; /* Giữ cho chữ không bị xuống dòng */
+    white-space: nowrap; 
 }
 
 .nav-cta-btn {
@@ -90,7 +90,7 @@ a {
     padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-left: 10px; /* Điều chỉnh khoảng cách */
+    margin-left: 10px; 
 }
 
 .nav-cta-btn:hover {
@@ -217,7 +217,7 @@ a {
     border: 1px solid #ffcccb; 
     border-radius: 10px;
     padding: 25px;
-    width: calc(50% - 12.5px); 
+    width: calc(50% - 12.5px); /* LỆNH KHẮC PHỤC LAYOUT 2X2 */
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
     font-size: 1.1rem;
     font-weight: 500;
@@ -391,25 +391,25 @@ a {
         padding: 10px 5%;
     }
     .logo-container {
-        width: 50%; /* Chia header thành 2 phần: logo và nút ngôn ngữ */
+        width: 45%; /* Cho logo chiếm 45% chiều rộng */
         justify-content: flex-start;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
     
-    /* ĐẢM BẢO MENU HIỂN THỊ VÀ CĂN CHỈNH ĐÚNG */
+    /* MENU NAV: HIỂN THỊ VÀ CĂN CHỈNH TRÊN 1 HÀNG */
     .main-nav {
-        display: flex; /* HIỂN THỊ LẠI MENU */
+        display: flex !important; /* ĐẢM BẢO MENU LUÔN HIỂN THỊ */
         order: 3; 
-        width: 100%;
-        text-align: center;
-        justify-content: space-around; /* Căn đều 4 nút */
-        margin-top: 5px;
-        margin-bottom: 5px;
+        width: 100%; /* Chiếm hết chiều rộng dưới cùng */
+        justify-content: space-around; 
+        margin: 10px 0; /* Khoảng cách trên/dưới */
+        padding-top: 10px;
+        border-top: 1px solid var(--light-bg); /* Thêm đường kẻ phân cách */
     }
     .main-nav a {
-        margin: 5px 5px; /* Giảm khoảng cách giữa các nút */
-        padding: 5px 8px;
-        font-size: 0.85rem; /* Giảm cỡ chữ để vừa 1 hàng */
+        margin: 5px 2px; 
+        padding: 5px 5px;
+        font-size: 0.8rem; /* Giảm cỡ chữ để vừa 1 hàng */
         line-height: 1;
     }
     .nav-cta-btn {
@@ -419,9 +419,9 @@ a {
     
     .lang-switcher {
         order: 2;
-        width: 50%; /* Đảm bảo nút ngôn ngữ ở góc phải */
+        width: 55%; /* Cho nút ngôn ngữ chiếm 55% chiều rộng còn lại */
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-end; /* Căn phải */
     }
     .hero-section {
         flex-direction: column;
