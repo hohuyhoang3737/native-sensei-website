@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI MÀU VÀ XUỐNG DÒNG) */
+/* 1. HEADER & NAVIGATION (FIX KÍCH THƯỚC CHỮ MENU) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +53,7 @@ a {
 /* ĐỊNH KIỂU BRANDING MỚI */
 .brand-text {
     display: flex;
-    flex-direction: column; /* Xếp dọc các dòng chữ */
+    flex-direction: column; 
     line-height: 1.1;
 }
 
@@ -62,8 +62,6 @@ a {
     font-weight: 900; 
     color: var(--primary-color);
     text-transform: uppercase;
-    /* FIX LỖI ẨN/MẤT CHỮ TRÊN MOBILE */
-    white-space: nowrap; 
 }
 
 .sub-brand {
@@ -73,7 +71,7 @@ a {
 }
 /* KẾT THÚC BRANDING MỚI */
 
-/* MENU NAV: FIX CĂN CHỈNH TRÊN PC */
+/* MENU NAV: FIX KÍCH THƯỚC CHỮ CHO PC */
 .main-nav {
     display: flex; 
     justify-content: center; 
@@ -86,7 +84,7 @@ a {
 
 .main-nav a {
     margin: 0 10px; 
-    font-size: 1rem;
+    font-size: 1rem; /* ĐÃ FIX: Đảm bảo kích thước chữ tiêu chuẩn trên PC */
     font-weight: 500;
     white-space: nowrap; 
     padding: 0; 
@@ -400,12 +398,12 @@ a {
         padding: 10px 5%;
     }
     .logo-container {
-        width: 50%; 
+        width: 45%; 
         justify-content: flex-start;
         margin-bottom: 0;
     }
     
-    /* MENU NAV: ĐẢM BẢO 4 NÚT NẰM TRÊN 1 HÀNG, CÓ THỂ BỊ ÉP SÁT */
+    /* MENU NAV: FIX BỐ CỤC ĐỂ 4 NÚT HIỂN THỊ TRÊN MOBILE */
     .main-nav {
         display: flex !important; 
         order: 3; 
@@ -428,7 +426,7 @@ a {
     
     .lang-switcher {
         order: 2;
-        width: 50%; /* ĐÃ SỬA: Cho nút ngôn ngữ chiếm 50% chiều rộng còn lại */
+        width: 55%; 
         display: flex;
         justify-content: flex-end; 
     }
