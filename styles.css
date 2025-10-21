@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION */
+/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI MÀU VÀ XUỐNG DÒNG) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -49,30 +49,39 @@ a {
     margin-right: 10px;
 }
 
-/* ĐỊNH KIỂU BRANDING */
+/* ĐỊNH KIỂU BRANDING MỚI */
 .brand-text {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column; /* Xếp dọc các dòng chữ */
     line-height: 1.1;
 }
 
 .brand-name {
-    font-size: 1.5rem; 
-    font-weight: 900; 
+    font-size: 1.5rem; /* Tăng cỡ chữ cho tên chính */
+    font-weight: 900; /* In đậm cực mạnh */
     color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .sub-brand {
-    font-size: 0.9rem; 
+    font-size: 0.9rem; /* Cỡ chữ nhỏ hơn cho "English School" */
     font-weight: 500;
-    color: var(--primary-color); 
+    color: var(--primary-color); /* Màu Xanh Navy đậm */
+}
+/* KẾT THÚC BRANDING MỚI */
+
+
+.main-nav {
+    display: flex; /* Dùng Flexbox để xếp các nút ngang hàng */
+    justify-content: center; /* Căn giữa các nút */
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng nếu không đủ chỗ */
 }
 
 .main-nav a {
-    margin-left: 25px;
+    margin: 0 10px; /* Giảm khoảng cách để chứa được 4 nút */
     font-size: 1rem;
     font-weight: 500;
+    white-space: nowrap; /* Giữ cho chữ không bị xuống dòng */
 }
 
 .nav-cta-btn {
@@ -81,7 +90,7 @@ a {
     padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-left: 25px; 
+    margin-left: 10px; /* Điều chỉnh khoảng cách */
 }
 
 .nav-cta-btn:hover {
@@ -375,39 +384,49 @@ a {
     }
 }
 
-/* TỐI ƯU HÓA MOBILE (SỬA LỖI XUỐNG DÒNG VÀ LAYOUT 1 CỘT) */
+/* TỐI ƯU HÓA MOBILE (FIX MENU NAV) */
 @media (max-width: 768px) {
-    
-    /* 1. HEADER - Căn giữa và bố cục dọc */
     .main-header {
         flex-wrap: wrap; 
         padding: 10px 5%;
     }
     .logo-container {
-        width: 100%; /* Cho logo chiếm hết chiều rộng để căn giữa */
-        justify-content: center;
+        width: 50%; /* Chia header thành 2 phần: logo và nút ngôn ngữ */
+        justify-content: flex-start;
         margin-bottom: 10px;
     }
-    .brand-text {
-        text-align: center; /* Căn giữa chữ trong logo */
-    }
+    
+    /* ĐẢM BẢO MENU HIỂN THỊ VÀ CĂN CHỈNH ĐÚNG */
     .main-nav {
-        margin-top: 10px;
+        display: flex; /* HIỂN THỊ LẠI MENU */
         order: 3; 
         width: 100%;
         text-align: center;
-        display: none; /* Ẩn menu chính trên mobile (nên dùng menu hamburger thực tế) */
+        justify-content: space-around; /* Căn đều 4 nút */
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
+    .main-nav a {
+        margin: 5px 5px; /* Giảm khoảng cách giữa các nút */
+        padding: 5px 8px;
+        font-size: 0.85rem; /* Giảm cỡ chữ để vừa 1 hàng */
+        line-height: 1;
+    }
+    .nav-cta-btn {
+        margin-left: 5px;
+        padding: 5px 10px;
+    }
+    
     .lang-switcher {
         order: 2;
-        margin-left: auto;
+        width: 50%; /* Đảm bảo nút ngôn ngữ ở góc phải */
+        display: flex;
+        justify-content: flex-end;
     }
-
-    /* 2. HERO SECTION - Căn giữa nội dung */
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding: 40px 5%; /* Giảm padding */
+        padding: 40px 5%; 
     }
     .hero-content {
         max-width: 100%;
@@ -426,17 +445,13 @@ a {
     .main-cta-btn {
         font-size: 1.1rem;
     }
-    
-    /* 3. PROBLEM SECTION - Bố cục 1 cột */
     .problem-list {
         flex-direction: column; 
-        gap: 15px;
     }
     .problem-item {
-        width: 100%; /* Đảm bảo 100% chiều rộng trên mobile */
+        width: 100% !important; 
     }
     
-    /* 4. FOOTER - Xếp dọc */
     .footer-content {
         flex-direction: column;
         gap: 20px;
