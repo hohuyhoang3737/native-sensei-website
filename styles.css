@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (ĐÃ FIX LỖI CĂN CHỈNH NÚT CAM VÀ LOGO 2 DÒNG) */
+/* 1. HEADER & NAVIGATION (FIX LỖI XUỐNG DÒNG "English School" VÀ HOME LINK) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -44,7 +44,7 @@ a {
     flex-shrink: 0; 
 }
 
-/* ĐỊNH KIỂU HOME LINK */
+/* ĐỊNH KIỂU CHO NÚT HOME (LOGO + TEXT) */
 .home-link {
     display: flex;
     align-items: center;
@@ -62,20 +62,22 @@ a {
     margin-right: 10px;
 }
 
-/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU */
+/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ SỬA LỖI KHÔNG XUỐNG DÒNG */
 .brand-text {
-    display: flex;
-    flex-direction: column; /* Quan trọng: buộc tên xuống dòng */
+    /* Quan trọng: Loại bỏ display: flex nếu có để đảm bảo xuống dòng */
+    display: block; 
     line-height: 1.1;
 }
 
 .brand-name {
+    display: block; /* Đảm bảo tên chính chiếm trọn dòng */
     font-size: 1.1rem; 
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .sub-brand {
+    display: block; /* Đảm bảo tên phụ chiếm trọn dòng */
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--primary-color);
@@ -475,3 +477,4 @@ a {
         gap: 20px;
     }
 }
+
