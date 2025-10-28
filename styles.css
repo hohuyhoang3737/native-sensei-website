@@ -41,6 +41,17 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* Đảm bảo khu vực logo không bị co lại */
+}
+
+.home-link {
+    display: flex; 
+    align-items: center;
+    text-decoration: none; /* Xóa gạch chân */
+}
+
+.home-link:hover {
+    opacity: 0.8; 
 }
 
 .logo-img {
@@ -48,6 +59,14 @@ a {
     height: 40px;
     margin-right: 10px;
 }
+
+.school-name {
+    /* Đã sửa lại để áp dụng màu sắc và không có gạch chân */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/* KẾT THÚC CÁC CHỈNH SỬA CHO LOGO */
 
 /* ĐỊNH KIỂU BRANDING */
 .brand-text {
@@ -384,9 +403,10 @@ a {
         padding: 10px 5%;
     }
     .logo-container {
-        width: 100%; /* Cho logo chiếm hết chiều rộng để căn giữa */
-        justify-content: center;
-        margin-bottom: 10px;
+        /* FIX: Đảm bảo không bị căn giữa trên mobile khi dùng home-link */
+        width: 45%; 
+        justify-content: flex-start;
+        margin-bottom: 0;
     }
     .brand-text {
         text-align: center; /* Căn giữa chữ trong logo */
@@ -441,4 +461,5 @@ a {
         flex-direction: column;
         gap: 20px;
     }
+
 }
