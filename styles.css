@@ -75,7 +75,7 @@ a {
 .main-nav {
     display: flex; 
     justify-content: center; 
-    align-items: center; /* ĐÃ FIX: Đảm bảo tất cả các mục được căn giữa theo chiều dọc */
+    align-items: center; 
     flex-wrap: nowrap; 
     flex-grow: 1; 
     margin-left: 20px; 
@@ -87,21 +87,19 @@ a {
     font-size: 1rem; 
     font-weight: 500;
     white-space: nowrap; 
-    /* ĐÃ FIX: Thiết lập display: flex và align-items: center để căn chỉnh chữ trong nút */
     display: flex;
     align-items: center;
-    height: 38px; /* Đặt chiều cao cố định bằng với nút Contact Us (8px padding + font size) */
-    padding: 0 5px; /* Giữ padding ngang nhỏ */
+    height: 38px; /* Đảm bảo chiều cao menu bằng nút CTA */
+    padding: 0 5px; 
 }
 
 .nav-cta-btn {
     background-color: var(--secondary-color);
     color: white !important;
-    padding: 8px 15px; /* Giữ padding này */
+    padding: 8px 15px; 
     border-radius: 5px;
     transition: background-color 0.3s;
     margin-left: 10px; 
-    /* ĐÃ FIX: Bỏ chiều cao cố định để nó tự co giãn theo padding */
 }
 
 .nav-cta-btn:hover {
@@ -328,7 +326,6 @@ a {
     background-color: #0d1259; 
 }
 
-
 /* 4. FOOTER */
 .main-footer {
     background-color: var(--primary-color);
@@ -388,11 +385,82 @@ a {
 }
 
 
+/* PHẦN 4: CHƯƠNG TRÌNH & GIÁO TRÌNH */
+.program-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.program-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.step-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.step-icon {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+
 /* Media Queries cho màn hình nhỏ hơn */
 @media (max-width: 992px) {
     .solution-grid {
         flex-direction: column;
         gap: 20px;
+    }
+    .steps-grid {
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .step-item {
+        max-width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 1px dashed var(--light-bg);
     }
 }
 
@@ -402,7 +470,7 @@ a {
         padding: 10px 5%;
     }
     .logo-container {
-        width: 45%; 
+        width: 50%; 
         justify-content: flex-start;
         margin-bottom: 0;
     }
@@ -430,7 +498,7 @@ a {
     
     .lang-switcher {
         order: 2;
-        width: 55%; 
+        width: 50%; 
         display: flex;
         justify-content: flex-end; 
     }
