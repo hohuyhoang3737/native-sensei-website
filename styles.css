@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION */
+/* 1. HEADER & NAVIGATION (FIX LỖI KHÔNG XUỐNG DÒNG) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -41,6 +41,19 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
+    flex-shrink: 0; 
+}
+
+/* ĐỊNH KIỂU HOME LINK */
+.home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.home-link:hover {
+    opacity: 0.8; 
 }
 
 .logo-img {
@@ -49,25 +62,27 @@ a {
     margin-right: 10px;
 }
 
-/* ĐỊNH KIỂU BRANDING */
+/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ SỬA LỖI KHÔNG XUỐNG DÒNG */
 .brand-text {
-    display: flex;
-    flex-direction: column; 
+    /* Đã XÓA flex-direction: column để tránh xung đột */
+    display: block; 
     line-height: 1.1;
 }
 
 .brand-name {
-    font-size: 1.5rem; 
-    font-weight: 900; 
+    display: block; /* QUAN TRỌNG: Buộc NATIVE SENSEI chiếm trọn dòng */
+    font-size: 1.1rem; 
+    font-weight: 700;
     color: var(--primary-color);
-    text-transform: uppercase;
 }
 
 .sub-brand {
-    font-size: 0.9rem; 
+    display: block; /* QUAN TRỌNG: Buộc English School chiếm trọn dòng */
+    font-size: 0.8rem;
     font-weight: 500;
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }
+/* ... (giữ nguyên các phần còn lại của styles.css) ... */
 
 .main-nav a {
     margin-left: 25px;
@@ -442,3 +457,4 @@ a {
         gap: 20px;
     }
 }
+
