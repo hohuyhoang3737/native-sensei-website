@@ -38,29 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 });
 
-// HÀM MỚI: BẬT/TẮT VIDEO POPUP GIỚI THIỆU GIÁO VIÊN
+
+// =======================================================
+// HÀM MỚI: BẬT/TẮT VIDEO POPUP GIỚI THIỆU GIÁO VIÊN (ĐÃ SỬA LỖI)
+// =======================================================
+
 function toggleVideo(videoId) {
     const videoOverlay = document.getElementById(videoId);
     const iframe = videoOverlay ? videoOverlay.querySelector('iframe') : null;
 
     if (!videoOverlay || !iframe) return;
 
-    // Nếu đang hiện (display không phải 'none')
+    // Lấy đường dẫn cơ sở của video (DyLPhqrVt6E)
+    // Lưu ý: Nếu bạn có nhiều video, bạn nên lấy URL từ data attribute trong HTML
+    const baseUrl = "https://www.youtube.com/embed/DyLPhqrVt6E"; 
+
+    // Nếu đang hiện (display là 'flex')
     if (videoOverlay.style.display === 'flex') {
         videoOverlay.style.display = 'none';
-        // Dừng video bằng cách reset src
-        const currentSrc = iframe.src.replace('?autoplay=1', '').replace('&autoplay=1', '');
-        iframe.src = currentSrc;
+        // DỪNG VIDEO: Reset src về đường dẫn cơ bản (không autoplay)
+        iframe.src = baseUrl;
+
     } else {
-        // ĐÃ FIX: Chắc chắn set là 'flex' để khớp với CSS
+        // HIỆN VIDEO: Đảm bảo set display là 'flex' để hiển thị popup
         videoOverlay.style.display = 'flex'; 
-        // Bật video và tự động phát
-        let currentSrc = iframe.src;
-        if (currentSrc.includes('?')) {
-            iframe.src = currentSrc + '&autoplay=1'; 
-        } else {
-            iframe.src = currentSrc + '?autoplay=1'; 
-        }
+        // PHÁT VIDEO: Thêm tham số autoplay=1 vào đường dẫn
+        iframe.src = baseUrl + "?autoplay=1"; 
     }
 }
-
