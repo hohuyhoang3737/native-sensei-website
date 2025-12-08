@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (FIX LỖI KHÔNG XUỐNG DÒNG) */
+/* 1. HEADER & NAVIGATION (FIX LỖI 2 DÒNG VÀ CĂN CHỈNH MENU) */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -62,41 +62,54 @@ a {
     margin-right: 10px;
 }
 
-/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ SỬA LỖI KHÔNG XUỐNG DÒNG */
+/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ FIX LỖI KHÔNG XUỐNG DÒNG */
 .brand-text {
-    /* Đã XÓA flex-direction: column để tránh xung đột */
-    display: block; 
+    display: flex;
+    flex-direction: column; /* FIX: Đảm bảo xuống dòng */
     line-height: 1.1;
 }
 
 .brand-name {
-    display: block; /* QUAN TRỌNG: Buộc NATIVE SENSEI chiếm trọn dòng */
     font-size: 1.1rem; 
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .sub-brand {
-    display: block; /* QUAN TRỌNG: Buộc English School chiếm trọn dòng */
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--primary-color);
 }
-/* ... (giữ nguyên các phần còn lại của styles.css) ... */
+
+/* MENU NAV: FIX CĂN CHỈNH TRÊN PC */
+.main-nav {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* ĐẢM BẢO CĂN CHỈNH THẲNG HÀNG */
+    flex-wrap: nowrap; 
+    flex-grow: 1; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
 
 .main-nav a {
-    margin-left: 25px;
-    font-size: 1rem;
+    margin: 0 10px; 
+    font-size: 1rem; 
     font-weight: 500;
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    height: 38px; /* Đặt chiều cao cố định để căn chỉnh với nút CTA */
+    padding: 0 5px; 
 }
 
 .nav-cta-btn {
     background-color: var(--secondary-color);
     color: white !important;
-    padding: 8px 15px;
+    padding: 8px 15px; 
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-left: 25px; 
+    margin-left: 10px; 
 }
 
 .nav-cta-btn:hover {
@@ -106,6 +119,7 @@ a {
 /* CSS cho Language Switcher */
 .lang-switcher {
     margin-left: 30px; 
+    flex-shrink: 0; 
 }
 
 .lang-btn {
@@ -323,6 +337,198 @@ a {
 }
 
 
+/* PHẦN 4: GIÁO TRÌNH (MỚI) */
+.program-section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: white; 
+}
+
+.program-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.step-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: var(--light-bg); 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.step-icon {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+
+/* PHẦN 5: GIỚI THIỆU GIÁO VIÊN (CONCEPT 3) */
+.teachers-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg); 
+    text-align: center;
+}
+
+.teachers-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.teachers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-bottom: 50px;
+}
+
+.teacher-card-minimal {
+    width: calc(50% - 15px); 
+    max-width: 450px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: box-shadow 0.3s;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.teacher-card-minimal:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-photo-minimal {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.teacher-details-minimal {
+    flex-grow: 1;
+}
+
+.teacher-details-minimal h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.teacher-headline-minimal {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.teacher-bio-snippet {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* Nút Video/Liên hệ tối giản */
+.video-icon-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.video-icon-btn i {
+    margin-right: 8px;
+}
+
+.video-icon-btn:hover {
+    background-color: var(--cta-hover);
+}
+
+/* KHUNG VIDEO OVERLAY (HIỆU ỨNG POPUP) */
+.teacher-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.teacher-video-overlay iframe {
+    width: 90%;
+    max-width: 800px;
+    height: 50vw;
+    max-height: 450px;
+}
+
+.close-video-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 /* 4. FOOTER */
 .main-footer {
     background-color: var(--primary-color);
@@ -388,41 +594,47 @@ a {
         flex-direction: column;
         gap: 20px;
     }
+    .steps-grid {
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .step-item {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-/* TỐI ƯU HÓA MOBILE (SỬA LỖI XUỐNG DÒNG VÀ LAYOUT 1 CỘT) */
 @media (max-width: 768px) {
-    
-    /* 1. HEADER - Căn giữa và bố cục dọc */
     .main-header {
         flex-wrap: wrap; 
         padding: 10px 5%;
     }
     .logo-container {
-        width: 100%; /* Cho logo chiếm hết chiều rộng để căn giữa */
+        width: 100%; 
         justify-content: center;
         margin-bottom: 10px;
     }
     .brand-text {
-        text-align: center; /* Căn giữa chữ trong logo */
+        text-align: center; 
     }
     .main-nav {
         margin-top: 10px;
         order: 3; 
         width: 100%;
         text-align: center;
-        display: none; /* Ẩn menu chính trên mobile (nên dùng menu hamburger thực tế) */
+        display: none; 
     }
     .lang-switcher {
         order: 2;
         margin-left: auto;
     }
 
-    /* 2. HERO SECTION - Căn giữa nội dung */
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding: 40px 5%; /* Giảm padding */
+        padding: 40px 5%; 
     }
     .hero-content {
         max-width: 100%;
@@ -442,19 +654,27 @@ a {
         font-size: 1.1rem;
     }
     
-    /* 3. PROBLEM SECTION - Bố cục 1 cột */
     .problem-list {
         flex-direction: column; 
         gap: 15px;
     }
     .problem-item {
-        width: 100%; /* Đảm bảo 100% chiều rộng trên mobile */
+        width: 100%; 
     }
     
-    /* 4. FOOTER - Xếp dọc */
     .footer-content {
         flex-direction: column;
         gap: 20px;
     }
-}
 
+    .teacher-card-minimal {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    .teacher-details-minimal {
+        text-align: center;
+    }
+}
