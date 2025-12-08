@@ -38,11 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 });
 
-
-// =======================================================
 // HÀM MỚI: BẬT/TẮT VIDEO POPUP GIỚI THIỆU GIÁO VIÊN
-// =======================================================
-
 function toggleVideo(videoId) {
     const videoOverlay = document.getElementById(videoId);
     const iframe = videoOverlay ? videoOverlay.querySelector('iframe') : null;
@@ -56,7 +52,8 @@ function toggleVideo(videoId) {
         const currentSrc = iframe.src.replace('?autoplay=1', '').replace('&autoplay=1', '');
         iframe.src = currentSrc;
     } else {
-        videoOverlay.style.display = 'flex';
+        // ĐÃ FIX: Chắc chắn set là 'flex' để khớp với CSS
+        videoOverlay.style.display = 'flex'; 
         // Bật video và tự động phát
         let currentSrc = iframe.src;
         if (currentSrc.includes('?')) {
@@ -66,3 +63,4 @@ function toggleVideo(videoId) {
         }
     }
 }
+
