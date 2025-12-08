@@ -1,1 +1,681 @@
+/* Thiết lập cơ bản */
+:root {
+    --primary-color: #1a237e; /* Xanh Navy đậm */
+    --secondary-color: #ff5722; /* Cam đất/Terracotta */
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --cta-bg: #ff5722;
+    --cta-hover: #e64a19;
+}
+
+/* THÊM BOX SIZING ĐỂ ĐẢM BẢO LAYOUT FLEXBOX/GRID HOẠT ĐỘNG CHÍNH XÁC */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* 1. HEADER & NAVIGATION (FIX LỖI 2 DÒNG VÀ CĂN CHỈNH MENU) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+/* ĐỊNH KIỂU HOME LINK */
+.home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.home-link:hover {
+    opacity: 0.8; 
+}
+
+.logo-img {
+    width: 40px; 
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ FIX LỖI KHÔNG XUỐNG DÒNG */
+.brand-text {
+    display: flex;
+    flex-direction: column; /* FIX: Đảm bảo xuống dòng */
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-size: 1.1rem; 
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.sub-brand {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* MENU NAV: FIX CĂN CHỈNH TRÊN PC */
+.main-nav {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* ĐẢM BẢO CĂN CHỈNH THẲNG HÀNG */
+    flex-wrap: nowrap; 
+    flex-grow: 1; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.main-nav a {
+    margin: 0 10px; 
+    font-size: 1rem; 
+    font-weight: 500;
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    height: 38px; /* Đặt chiều cao cố định để căn chỉnh với nút CTA */
+    padding: 0 5px; 
+}
+
+.nav-cta-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+.nav-cta-btn:hover {
+    background-color: #e64a19;
+}
+
+/* CSS cho Language Switcher */
+.lang-switcher {
+    margin-left: 30px; 
+    flex-shrink: 0; 
+}
+
+.lang-btn {
+    border: 1px solid var(--primary-color);
+    padding: 5px 8px;
+    margin-left: 5px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+/* 2. HERO SECTION */
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+    min-height: 70vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 55%;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-hero-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-slogan {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.hero-benefits {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.main-cta-btn {
+    display: inline-block;
+    background-color: var(--cta-bg);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.main-cta-btn:hover {
+    background-color: var(--cta-hover);
+    transform: translateY(-2px);
+}
+
+.cta-note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 2. PROBLEM SECTION */
+.problem-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.problem-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.problem-list {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 25px; 
+    margin-bottom: 30px;
+    max-width: 1000px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.problem-item {
+    background-color: #fff9f9; 
+    border: 1px solid #ffcccb; 
+    border-radius: 10px;
+    padding: 25px;
+    width: calc(50% - 12.5px); 
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1); 
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color); 
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ĐỊNH KIỂU ICON VẤN ĐỀ */
+.icon-problem {
+    color: var(--secondary-color); 
+    font-size: 2rem; 
+    margin-bottom: 15px;
+    display: block; 
+    width: 100%;
+}
+
+.problem-item p {
+    font-size: 1rem;
+    font-weight: bold; 
+    color: var(--primary-color); 
+}
+
+.problem-transition {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+/* 3. SOLUTION SECTION */
+.solution-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg); 
+    text-align: center;
+}
+
+.solution-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.solution-item {
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: white; 
+    border-radius: 12px;
+    border: 1px solid var(--light-bg); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s;
+}
+
+.solution-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.solution-item h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* ĐỊNH KIỂU CHO ICON */
+.icon-solution {
+    color: var(--secondary-color); 
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+.solution-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7; 
+}
+
+/* Định kiểu cho CTA phụ */
+.secondary-cta-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.secondary-cta-btn:hover {
+    background-color: #0d1259; 
+}
+
+
+/* PHẦN 4: GIÁO TRÌNH */
+.program-section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: white; 
+}
+
+.program-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.step-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: var(--light-bg); 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-item h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.step-icon {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+
+/* PHẦN 5: GIỚI THIỆU GIÁO VIÊN (CONCEPT 3) */
+.teachers-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg); 
+    text-align: center;
+}
+
+.teachers-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.teachers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-bottom: 50px;
+}
+
+.teacher-card-minimal {
+    width: calc(50% - 15px); 
+    max-width: 450px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: box-shadow 0.3s;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.teacher-card-minimal:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-photo-minimal {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.teacher-details-minimal {
+    flex-grow: 1;
+}
+
+.teacher-details-minimal h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.teacher-headline-minimal {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.teacher-bio-snippet {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* Nút Video/Liên hệ tối giản */
+.video-icon-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.video-icon-btn i {
+    margin-right: 8px;
+}
+
+.video-icon-btn:hover {
+    background-color: var(--cta-hover);
+}
+
+/* KHUNG VIDEO OVERLAY (HIỆU ỨNG POPUP) */
+.teacher-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.teacher-video-overlay iframe {
+    width: 90%;
+    max-width: 800px;
+    height: 50vw;
+    max-height: 450px;
+}
+
+.close-video-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* 4. FOOTER */
+.main-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-links h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.social-icon {
+    color: white;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+}
+
+.social-icon i {
+    margin-right: 8px;
+}
+
+.policy-link {
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.policy-link:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+
+/* Media Queries cho màn hình nhỏ hơn */
+@media (max-width: 992px) {
+    .solution-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .steps-grid {
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .step-item {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap; 
+        padding: 10px 5%;
+    }
+    .logo-container {
+        width: 100%; 
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .brand-text {
+        text-align: center; 
+    }
+    .main-nav {
+        margin-top: 10px;
+        order: 3; 
+        width: 100%;
+        text-align: center;
+        display: none; 
+    }
+    .lang-switcher {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%; 
+    }
+    .hero-content {
+        max-width: 100%;
+        order: 2;
+    }
+    .hero-image-placeholder {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-slogan {
+        font-size: 1.2rem;
+    }
+    .main-cta-btn {
+        font-size: 1.1rem;
+    }
+    
+    .problem-list {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    .problem-item {
+        width: 100%; 
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .teacher-card-minimal {
+        width: 100%; 
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    .teacher-details-minimal {
+        text-align: center;
+    }
+}
 
