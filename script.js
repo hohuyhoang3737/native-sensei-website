@@ -37,3 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLang') || 'ja'; // Mặc định là Tiếng Nhật
     setLanguage(savedLang);
 });
+
+
+// =======================================================
+// HÀM MỚI: BẬT/TẮT VIDEO POPUP GIỚI THIỆU GIÁO VIÊN
+// =======================================================
+
+function toggleVideo(videoId) {
+    const videoOverlay = document.getElementById(videoId);
+    const iframe = videoOverlay ? videoOverlay.querySelector('iframe') : null;
+
+    if (!videoOverlay || !iframe) return;
+
+    // Nếu đang hiện (display không phải 'none')
+    if (videoOverlay.style.display === 'flex') {
+        videoOverlay.style.display = 'none';
+        // Dừng video bằng cách reset src
+        const currentSrc = iframe.src.replace('?autoplay=1', '').replace('&autoplay=1', '');
+        iframe.src = currentSrc;
+    } else {
+        videoOverlay.style.display = 'flex';
+        // Bật video và tự động phát
+        let currentSrc = iframe.src;
+        if (currentSrc.includes('?')) {
+            iframe.src = currentSrc + '&autoplay=1'; 
+        } else {
+            iframe.src = currentSrc + '?autoplay=1'; 
+        }
+    }
+}
