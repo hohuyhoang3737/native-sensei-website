@@ -134,6 +134,66 @@ a {
     color: white !important;
 }
 
+/* =======================================
+   NAV DROPDOWN STYLES (Phần Course) - FIX
+   ======================================= */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+    height: 38px; 
+    margin: 0 10px;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+.dropbtn i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 5px;
+    border-top: 3px solid var(--secondary-color);
+    top: 100%; 
+    left: 0;
+    text-align: left;
+    white-space: nowrap; /* Đảm bảo menu không bị vỡ dòng */
+}
+
+/* Chỉnh sửa link bên trong dropdown-content (ghi đè nav a) */
+.dropdown-content a {
+    color: var(--text-color) !important;
+    padding: 12px 16px !important; /* Quan trọng để ghi đè padding 0 5px của nav a */
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    height: auto;
+    transition: background-color 0.1s;
+    margin: 0 !important; /* Quan trọng để ghi đè margin 0 10px của nav a */
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color) !important;
+}
+
+/* Hiển thị dropdown khi hover */
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+/* ======================================= */
+
+
 /* 2. HERO SECTION */
 .hero-section {
     display: flex;
@@ -418,7 +478,6 @@ a {
     text-align: center;
 }
 
-/* HEADER CỦA THẺ (ẢNH + TÊN) */
 .teacher-card-header {
     display: flex;
     align-items: center;
@@ -429,7 +488,6 @@ a {
     padding-bottom: 20px;
 }
 
-/* GIẢM KÍCH CỠ AVATAR */
 .teacher-photo-small {
     width: 100px; 
     height: 100px;
@@ -456,7 +514,6 @@ a {
     margin: 5px 0 0 0;
 }
 
-/* BODY CỦA THẺ (BIO + VIDEO) */
 .teacher-card-body {
     text-align: left;
 }
@@ -468,7 +525,6 @@ a {
     margin-bottom: 30px;
 }
 
-/* KHUNG VIDEO NHÚNG TRONG THẺ */
 .teacher-video-embed-in-card {
     margin-bottom: 30px;
     text-align: center;
@@ -481,10 +537,9 @@ a {
     font-weight: 600;
 }
 
-/* Container responsive cho Video (16:9) */
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -499,7 +554,6 @@ a {
     height: 100%;
 }
 
-/* Nút CTA trong thẻ giáo viên */
 .main-cta-btn.is-contact-in-card {
     display: inline-flex;
     margin-top: 15px;
@@ -542,6 +596,84 @@ a {
 .is-recruiting-cta {
     flex-shrink: 0;
     background-color: var(--secondary-color);
+}
+
+
+/* PHẦN 6: CÁC KHÓA HỌC CHÍNH (Đã được thêm vào index.html ở bước trước) */
+.courses-section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--light-bg); 
+}
+
+.courses-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.course-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(25% - 22.5px); 
+    min-width: 250px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    min-height: 80px; 
+}
+
+.course-cta {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: bold;
+    border: 2px solid var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.course-cta:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 
@@ -603,139 +735,6 @@ a {
     padding-top: 15px;
 }
 
-
-/* PHẦN 6: CÁC KHÓA HỌC CHÍNH */
-.courses-section {
-    padding: 80px 5%;
-    text-align: center;
-    background-color: var(--light-bg); 
-}
-
-.courses-section h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 50px;
-}
-
-.course-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 60px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.course-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 30px;
-    width: calc(25% - 22.5px); /* 4 cột trên desktop */
-    min-width: 250px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    text-align: center;
-    border-top: 5px solid var(--primary-color);
-}
-
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.course-icon {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.course-card h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.course-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    min-height: 80px; /* Đảm bảo chiều cao thống nhất */
-}
-
-.course-cta {
-    display: inline-block;
-    color: var(--secondary-color);
-    font-weight: bold;
-    border: 2px solid var(--secondary-color);
-    padding: 8px 15px;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: all 0.3s;
-}
-
-.course-cta:hover {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-
-/* =======================================
-   NAV DROPDOWN STYLES (Phần Course)
-   ======================================= */
-.nav-dropdown {
-    position: relative;
-    display: inline-block;
-    height: 38px; /* Giữ chiều cao cố định để căn chỉnh với các nút khác */
-    margin: 0 10px;
-}
-
-.dropbtn {
-    display: flex;
-    align-items: center;
-    padding: 0 5px;
-}
-.dropbtn i {
-    margin-left: 5px;
-    font-size: 0.8rem;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 220px;
-    box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-    border-radius: 5px;
-    border-top: 3px solid var(--secondary-color);
-    top: 100%; /* Đặt menu thả xuống ngay dưới nút */
-    left: 0;
-    text-align: left;
-}
-
-.dropdown-content a {
-    color: var(--text-color) !important;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.95rem;
-    height: auto;
-    transition: background-color 0.1s;
-    margin: 0; /* Xóa margin thừa từ nav */
-}
-
-.dropdown-content a:hover {
-    background-color: var(--light-bg);
-    color: var(--primary-color) !important;
-}
-
-/* Hiển thị dropdown khi hover */
-.nav-dropdown:hover .dropdown-content {
-    display: block;
-}
 
 /* Media Queries cho màn hình nhỏ hơn */
 @media (max-width: 992px) {
@@ -840,4 +839,3 @@ a {
         min-width: 90%;
     }
 }
-
