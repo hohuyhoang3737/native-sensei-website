@@ -190,62 +190,58 @@
     <section class="teachers-section" id="teachers">
         <h2 data-ja="専属講師紹介" data-en="Meet Your Dedicated Sensei">専属講師紹介</h2>
 
-        <div class="teachers-grid">
+        <div class="teacher-combined-card">
             
-            <div class="teacher-card-minimal">
-                <img src="teacher_marivic.jpg" alt="Miss Marivic Solis" class="teacher-photo-minimal">
-                <div class="teacher-details-minimal">
+            <div class="teacher-card-header">
+                <img src="teacher_marivic.jpg" alt="Miss Marivic Solis" class="teacher-photo-small">
+                <div class="teacher-header-text">
                     <h3 data-ja="マリヴィック・ソリス講師" data-en="Miss Marivic Solis">Miss Marivic Solis</h3>
-                    <p class="teacher-headline-minimal">
-                        <span data-ja="フィリピン出身 | 9年間のベトナム人生徒指導経験" data-en="Philippines | 9 years teaching Vietnamese learners (Sp.Ed)">
-                            Philippines | 9 years teaching Vietnamese learners (Sp.Ed)
+                    <p class="teacher-headline-full">
+                        <span data-ja="教育特別支援のスペシャリスト | 9年間の指導経験" data-en="Special Education Background | 9 years teaching experience">
+                            Special Education Background | 9 years teaching experience
                         </span>
                     </p>
-                    
-                    <p class="teacher-bio-snippet" data-ja="教育特別支援のバックグラウンドを活かし、生徒一人ひとりの学習スタイルに合わせたレッスンをカスタムします。「生徒が安心して発言できる環境」と「積極的なコミュニケーション」を大切にしています。" data-en="Utilizing her Special Education background, Miss Marivic customizes lessons for each student's learning preference. She values building deep connections, ensuring students feel heard, and fostering effective communication skills.">
-                        教育特別支援のバックグラウンドを活かし、生徒一人ひとりの学習スタイルに合わせたレッスンをカスタムします。「生徒が安心して発言できる環境」と「積極的なコミュニケーション」を大切にしています。
-                    </p>
-                    
-                    <button class="video-icon-btn" onclick="toggleVideo('video_marivic')">
-                        <i class="fab fa-youtube"></i> <span data-ja="動画を見る" data-en="Watch Video">動画を見る</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="teacher-video-overlay" id="video_marivic">
-                <button class="close-video-btn" onclick="toggleVideo('video_marivic')">&times;</button>
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/DyLPhqrVt6E" 
-                    frameborder="0" 
-                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="teacher-card-minimal placeholder">
-                <img src="placeholder_teacher.jpg" alt="Teacher Placeholder" class="teacher-photo-minimal">
-                <div class="teacher-details-minimal">
-                    <h3 data-ja="講師募集！" data-en="Join Our Team!">Join Our Team!</h3>
-                    <p class="teacher-headline-minimal">
-                        <span data-ja="採用基準をクリアした方" data-en="Vetted & Experienced">
-                            Vetted & Experienced
-                        </span>
-                    </p>
-                    <p class="teacher-bio-snippet">
-                        私たちは質の高い講師を常に探しています。採用基準や条件についてはお問い合わせください。
-                    </p>
-                    <a href="mailto:contact@nativesensei.com" class="video-icon-btn is-recruiting" data-ja="募集を見る" data-en="Apply Now">
-                        <i class="fas fa-arrow-right"></i> 募集を見る
-                    </a>
                 </div>
             </div>
 
+            <div class="teacher-card-body">
+                
+                <p class="teacher-bio-full" data-ja="教育特別支援のバックグラウンドを活かし、生徒一人ひとりの学習スタイルに合わせたレッスンをカスタムします。9年間の指導経験から、生徒が安心して発言できる環境と、積極的なコミュニケーションスキル開発を大切にしています。" data-en="With 9 years of experience teaching Vietnamese learners and a background in Special Education, Miss Marivic excels at customizing lessons based on individual learning preferences. She prioritizes building strong connections and fostering effective communication skills.">
+                     教育特別支援のバックグラウンドを活かし、生徒一人ひとりの学習スタイルに合わせたレッスンをカスタムします。9年間の指導経験から、生徒が安心して発言できる環境と、積極的なコミュニケーションスキル開発を大切にしています。
+                </p>
+
+                <div class="teacher-video-embed-in-card">
+                    <h4 data-ja="マリヴィック講師からのメッセージ" data-en="A Message from Miss Marivic">A Message from Miss Marivic</h4>
+                    <div class="video-responsive">
+                        <iframe 
+                            src="https://www.youtube.com/embed/DyLPhqrVt6E" 
+                            frameborder="0" 
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <a href="mailto:contact@nativesensei.com" class="main-cta-btn is-contact-in-card" data-ja="この講師と無料体験を予約する" data-en="Book a FREE Trial with Miss Marivic">
+                    <i class="fas fa-calendar-check"></i> この講師と無料体験を予約する
+                </a>
+            </div>
+        </div>
+
+        <div class="recruitment-banner">
+             <div class="recruitment-text">
+                <h3 data-ja="質の高い講師を募集しています" data-en="We are looking for High-Quality Sensei">質の高い講師を募集しています</h3>
+                <p data-ja="Native Senseiは、常に専門知識と情熱を持った講師を募集しています。採用基準の詳細はこちらから。" data-en="Native Sensei is continually recruiting professional and passionate instructors. Find out more about our requirements here.">
+                    Native Senseiは、常に専門知識と情熱を持った講師を募集しています。採用基準の詳細はこちらから。
+                </p>
+             </div>
+            <a href="mailto:contact@nativesensei.com" class="secondary-cta-btn is-recruiting-cta" data-ja="採用情報を見る" data-en="View Recruitment">
+                <i class="fas fa-arrow-right"></i> 採用情報を見る
+            </a>
         </div>
         
-        <a href="mailto:contact@nativesensei.com" class="secondary-cta-btn" data-ja="無料体験レッスンに申し込む" data-en="Book Your FREE Trial Lesson Now!">
-            無料体験レッスンに申し込む
+        <a href="mailto:contact@nativesensei.com" class="main-cta-btn" data-ja="他の講師をチェックする" data-en="Check Other Teachers">
+            他の講師をチェックする
         </a>
     </section>
     
