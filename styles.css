@@ -682,6 +682,61 @@ a {
 }
 
 
+/* =======================================
+   NAV DROPDOWN STYLES (Phần Course)
+   ======================================= */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+    height: 38px; /* Giữ chiều cao cố định để căn chỉnh với các nút khác */
+    margin: 0 10px;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+.dropbtn i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 5px;
+    border-top: 3px solid var(--secondary-color);
+    top: 100%; /* Đặt menu thả xuống ngay dưới nút */
+    left: 0;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: var(--text-color) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    height: auto;
+    transition: background-color 0.1s;
+    margin: 0; /* Xóa margin thừa từ nav */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color) !important;
+}
+
+/* Hiển thị dropdown khi hover */
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* Media Queries cho màn hình nhỏ hơn */
 @media (max-width: 992px) {
     .solution-grid {
@@ -785,3 +840,4 @@ a {
         min-width: 90%;
     }
 }
+
