@@ -401,10 +401,10 @@ a {
 }
 
 
-/* PHẦN 5: GIỚI THIỆU GIÁO VIÊN (CONCEPT 3) */
+/* PHẦN 5: GIỚI THIỆU GIÁO VIÊN (CONCEPT 4: VIDEO NHÚNG TRỰC TIẾP) */
 .teachers-section {
     padding: 80px 5%;
-    background-color: var(--light-bg); 
+    background-color: white; /* Nền trắng để nổi bật */
     text-align: center;
 }
 
@@ -414,119 +414,152 @@ a {
     margin-bottom: 50px;
 }
 
-.teachers-grid {
+.teachers-grid-video-display {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; 
-    margin-bottom: 50px;
-}
-
-.teacher-card-minimal {
-    width: calc(50% - 15px); 
-    max-width: 450px;
-    background-color: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    gap: 40px;
     align-items: flex-start;
-    transition: box-shadow 0.3s;
-    border-left: 5px solid var(--secondary-color);
+    text-align: left;
+    background-color: var(--light-bg); /* Nền nhẹ cho phần nội dung chính */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.teacher-card-minimal:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* --- CỘT 1: THẺ CHI TIẾT GIÁO VIÊN --- */
+.teacher-card-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.teacher-photo-minimal {
-    width: 80px;
-    height: 80px;
+.teacher-photo-detail {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
+    margin-bottom: 20px;
+    border: 4px solid var(--secondary-color); /* Viền màu cam nổi bật */
 }
 
-.teacher-details-minimal {
-    flex-grow: 1;
+.teacher-details-detail h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
-.teacher-details-minimal h3 {
+.teacher-headline-detail {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.teacher-bio-full {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: left; /* Căn trái cho bio */
+}
+
+/* --- CỘT 2: VIDEO NHÚNG --- */
+.teacher-video-embed {
+    flex: 2; /* Chiếm 2/3 không gian */
+}
+
+.teacher-video-embed h3 {
     font-size: 1.4rem;
     color: var(--primary-color);
     margin-top: 0;
-    margin-bottom: 3px;
-}
-
-.teacher-headline-minimal {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.teacher-bio-snippet {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--text-color);
     margin-bottom: 15px;
+    text-align: center;
 }
 
-/* Nút Video/Liên hệ tối giản */
-.video-icon-btn {
-    background-color: var(--secondary-color);
-    color: white !important;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    transition: background-color 0.3s;
+/* Container responsive cho Video (16:9) */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.video-icon-btn i {
-    margin-right: 8px;
-}
-
-.video-icon-btn:hover {
-    background-color: var(--cta-hover);
-}
-
-/* KHUNG VIDEO OVERLAY (HIỆU ỨNG POPUP) */
-.teacher-video-overlay {
-    position: fixed;
+.video-responsive iframe {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none; 
-    justify-content: center;
+}
+
+/* Nút CTA trong phần giới thiệu giáo viên */
+.video-icon-btn.is-contact {
+    display: inline-flex;
+    margin-top: 15px;
+    background-color: var(--primary-color);
+}
+.video-icon-btn.is-contact:hover {
+    background-color: #0d1259;
+}
+
+
+/* --- BANNER TUYỂN DỤNG (THAY THẾ THẺ PLACEHOLDER CŨ) --- */
+.recruitment-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    background-color: #fff9f9; /* Màu nền nhẹ, ấm */
+    border: 1px solid #ffcccb;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1);
+    text-align: left;
 }
 
-.teacher-video-overlay iframe {
-    width: 90%;
-    max-width: 800px;
-    height: 50vw;
-    max-height: 450px;
+.recruitment-text h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+.recruitment-text p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
 }
 
-.close-video-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1001;
+.is-recruiting-cta {
+    flex-shrink: 0;
+    background-color: var(--secondary-color);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+    .teachers-grid-video-display {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+    .teacher-card-detail {
+        order: 2; /* Đưa chi tiết xuống dưới video */
+    }
+    .teacher-video-embed {
+        order: 1;
+    }
+    .recruitment-banner {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
 }
 
 /* 4. FOOTER */
@@ -678,4 +711,5 @@ a {
         text-align: center;
     }
 }
+
 
