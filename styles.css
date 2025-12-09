@@ -28,7 +28,7 @@ a {
     color: var(--primary-color);
 }
 
-/* 1. HEADER & NAVIGATION (FIX LỖI 2 DÒNG VÀ CĂN CHỈNH MENU) */
+/* 1. HEADER & NAVIGATION */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -44,7 +44,6 @@ a {
     flex-shrink: 0; 
 }
 
-/* ĐỊNH KIỂU HOME LINK */
 .home-link {
     display: flex;
     align-items: center;
@@ -62,10 +61,9 @@ a {
     margin-right: 10px;
 }
 
-/* CẤU TRÚC 2 DÒNG CHO TÊN THƯƠNG HIỆU: ĐÃ FIX LỖI KHÔNG XUỐNG DÒNG */
 .brand-text {
     display: flex;
-    flex-direction: column; /* FIX: Đảm bảo xuống dòng */
+    flex-direction: column; 
     line-height: 1.1;
 }
 
@@ -81,11 +79,10 @@ a {
     color: var(--primary-color);
 }
 
-/* MENU NAV: FIX CĂN CHỈNH TRÊN PC */
 .main-nav {
     display: flex; 
     justify-content: center; 
-    align-items: center; /* ĐẢM BẢO CĂN CHỈNH THẲNG HÀNG */
+    align-items: center; 
     flex-wrap: nowrap; 
     flex-grow: 1; 
     margin-left: 20px; 
@@ -99,7 +96,7 @@ a {
     white-space: nowrap; 
     display: flex;
     align-items: center;
-    height: 38px; /* Đặt chiều cao cố định để căn chỉnh với nút CTA */
+    height: 38px; 
     padding: 0 5px; 
 }
 
@@ -116,7 +113,6 @@ a {
     background-color: #e64a19;
 }
 
-/* CSS cho Language Switcher */
 .lang-switcher {
     margin-left: 30px; 
     flex-shrink: 0; 
@@ -246,7 +242,6 @@ a {
     line-height: 1.6;
 }
 
-/* ĐỊNH KIỂU ICON VẤN ĐỀ */
 .icon-problem {
     color: var(--secondary-color); 
     font-size: 2rem; 
@@ -306,7 +301,6 @@ a {
     font-weight: 700;
 }
 
-/* ĐỊNH KIỂU CHO ICON */
 .icon-solution {
     color: var(--secondary-color); 
     font-size: 1.6rem;
@@ -319,7 +313,6 @@ a {
     line-height: 1.7; 
 }
 
-/* Định kiểu cho CTA phụ */
 .secondary-cta-btn {
     display: inline-block;
     background-color: var(--primary-color);
@@ -429,7 +422,7 @@ a {
 .teacher-card-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Căn giữa trên desktop */
+    justify-content: center; 
     gap: 20px;
     margin-bottom: 25px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
@@ -438,7 +431,7 @@ a {
 
 /* GIẢM KÍCH CỠ AVATAR */
 .teacher-photo-small {
-    width: 100px; /* Kích thước nhỏ hơn (từ 150px xuống 100px) */
+    width: 100px; /* Kích thước nhỏ hơn */
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
@@ -465,259 +458,4 @@ a {
 
 /* BODY CỦA THẺ (BIO + VIDEO) */
 .teacher-card-body {
-    text-align: left;
-}
-
-.teacher-bio-full {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-color);
-    margin-bottom: 30px;
-}
-
-/* KHUNG VIDEO NHÚNG TRONG THẺ */
-.teacher-video-embed-in-card {
-    margin-bottom: 30px;
-    text-align: center;
-}
-.teacher-video-embed-in-card h4 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-/* Container responsive cho Video (16:9) */
-.video-responsive {
-    position: relative;
-    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Nút CTA trong thẻ giáo viên */
-.main-cta-btn.is-contact-in-card {
-    display: inline-flex;
-    margin-top: 15px;
-    background-color: var(--primary-color);
-    font-size: 1.1rem;
-    padding: 12px 25px;
-}
-.main-cta-btn.is-contact-in-card:hover {
-    background-color: #0d1259;
-}
-
-
-/* --- BANNER TUYỂN DỤNG --- */
-.recruitment-banner {
-    max-width: 800px; /* Điều chỉnh để khớp với thẻ giáo viên */
-    margin: 40px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff9f9; 
-    border: 1px solid #ffcccb;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.1);
-    text-align: left;
-}
-
-.recruitment-text h3 {
-    color: var(--secondary-color);
-    margin-top: 0;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-.recruitment-text p {
-    font-size: 0.95rem;
-    color: #666;
-    margin: 0;
-}
-
-.is-recruiting-cta {
-    flex-shrink: 0;
-    background-color: var(--secondary-color);
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    /* (Giữ nguyên các styles responsive khác) */
-    .teacher-card-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .teacher-header-text {
-        text-align: center;
-    }
-    .recruitment-banner {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-        text-align: center;
-    }
-}
-
-/* 4. FOOTER */
-.main-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.social-links h4 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.social-icon {
-    color: white;
-    margin-bottom: 8px;
-    transition: color 0.3s;
-}
-
-.social-icon:hover {
-    color: var(--secondary-color);
-}
-
-.social-icon i {
-    margin-right: 8px;
-}
-
-.policy-link {
-    color: rgba(255, 255, 255, 0.7); 
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-
-.policy-link:hover {
-    color: var(--secondary-color);
-}
-
-.copyright {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
-}
-
-
-/* Media Queries cho màn hình nhỏ hơn */
-@media (max-width: 992px) {
-    .solution-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .steps-grid {
-        flex-direction: column;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .step-item {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        flex-wrap: wrap; 
-        padding: 10px 5%;
-    }
-    .logo-container {
-        width: 100%; 
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-    .brand-text {
-        text-align: center; 
-    }
-    .main-nav {
-        margin-top: 10px;
-        order: 3; 
-        width: 100%;
-        text-align: center;
-        display: none; 
-    }
-    .lang-switcher {
-        order: 2;
-        margin-left: auto;
-    }
-
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 5%; 
-    }
-    .hero-content {
-        max-width: 100%;
-        order: 2;
-    }
-    .hero-image-placeholder {
-        order: 1;
-        margin-bottom: 30px;
-    }
-    .hero-title {
-        font-size: 2rem;
-    }
-    .hero-slogan {
-        font-size: 1.2rem;
-    }
-    .main-cta-btn {
-        font-size: 1.1rem;
-    }
-    
-    .problem-list {
-        flex-direction: column; 
-        gap: 15px;
-    }
-    .problem-item {
-        width: 100%; 
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .teacher-card-minimal {
-        width: 100%; 
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 100%;
-    }
-    .teacher-details-minimal {
-        text-align: center;
-    }
-}
-
-
-
+    text
