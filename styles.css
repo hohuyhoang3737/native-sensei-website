@@ -604,6 +604,84 @@ a {
 }
 
 
+/* PHẦN 6: CÁC KHÓA HỌC CHÍNH */
+.courses-section {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--light-bg); 
+}
+
+.courses-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.course-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(25% - 22.5px); /* 4 cột trên desktop */
+    min-width: 250px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    min-height: 80px; /* Đảm bảo chiều cao thống nhất */
+}
+
+.course-cta {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: bold;
+    border: 2px solid var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.course-cta:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+
 /* Media Queries cho màn hình nhỏ hơn */
 @media (max-width: 992px) {
     .solution-grid {
@@ -619,6 +697,11 @@ a {
     .step-item {
         max-width: 100%;
         margin-bottom: 20px;
+    }
+    /* PHẦN 6: COURSES (2 cột trên tablet) */
+    .course-card {
+        width: calc(50% - 15px); 
+        min-width: 45%;
     }
 }
 
@@ -695,5 +778,10 @@ a {
         gap: 15px;
         padding: 20px;
         text-align: center;
+    }
+    /* PHẦN 6: COURSES (1 cột trên mobile) */
+    .course-card {
+        width: 100%; 
+        min-width: 90%;
     }
 }
