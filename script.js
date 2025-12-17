@@ -1,69 +1,39 @@
 function setLanguage(lang) {
-    // 1. Đặt ngôn ngữ hiện tại của trang
+    // 1. Lưu ngôn ngữ đã chọn vào bộ nhớ trình duyệt (localStorage)
+    // Việc này giúp khi bạn chuyển trang, trang mới sẽ biết bạn đang chọn ngôn ngữ nào
+    localStorage.setItem('selectedLang', lang);
+
+    // 2. Đặt thuộc tính lang cho thẻ html
     document.documentElement.lang = lang; 
 
-    // 2. Cập nhật trạng thái active của nút ngôn ngữ
+    // 3. Cập nhật trạng thái hiển thị (nổi bật) của nút chọn ngôn ngữ
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
+        // Nếu mã ngôn ngữ của nút khớp với lang đang chọn thì thêm class active
+        if (btn.getAttribute('data-lang-code') === lang) {
+            btn.classList.add('active');
+        }
     });
-    const langButton = document.querySelector(`.lang-btn[data-lang-code="${lang}"]`);
-    if (langButton) {
-        langButton.classList.add('active');
-    }
 
-    // 3. Thay đổi nội dung của tất cả các phần tử có thuộc tính data-
+    // 4. Tìm và thay đổi nội dung của tất cả các phần tử có thuộc tính data-ja hoặc data-en
     document.querySelectorAll('[data-ja], [data-en]').forEach(element => {
-        let newContent;
-        if (lang === 'ja') {
-            newContent = element.getAttribute('data-ja');
-        } else if (lang === 'en') {
-            newContent = element.getAttribute('data-en');
-        }
-
-        // Cập nhật nội dung
-        if (element.tagName === 'TITLE') {
-            document.title = newContent;
-        } else if (newContent) {
-            element.innerHTML = newContent;
+        let newContent = (lang === 'ja') ? element.getAttribute('data-ja') : element.getAttribute('data-en');
+        
+        if (newContent) {
+            // Nếu là thẻ tiêu đề trang (Title trên tab trình duyệt)
+            if (element.tagName === 'TITLE') {
+                document.title = newContent;
+            } else {
+                // Thay đổi nội dung hiển thị bên trong thẻ
+                element.innerHTML = newContent;
+            }
         }
     });
-
-    // Lưu lựa chọn ngôn ngữ vào bộ nhớ trình duyệt để lần sau tải lại
-    localStorage.setItem('selectedLang', lang);
 }
 
-// Tự động tải ngôn ngữ đã chọn khi trang được tải lần đầu
+// Hàm này sẽ tự động chạy mỗi khi một trang web bất kỳ được tải xong
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLang') || 'ja'; // Mặc định là Tiếng Nhật
+    // Kiểm tra xem trước đó người dùng đã chọn ngôn ngữ nào chưa, nếu chưa thì mặc định là tiếng Nhật ('ja')
+    const savedLang = localStorage.getItem('selectedLang') || 'ja';
     setLanguage(savedLang);
 });
-
-
-// =======================================================
-// HÀM MỚI: BẬT/TẮT VIDEO POPUP GIỚI THIỆU GIÁO VIÊN (ĐÃ SỬA LỖI DỨT ĐIỂM)
-// =======================================================
-
-function toggleVideo(videoId) {
-    const videoOverlay = document.getElementById(videoId);
-    const iframe = videoOverlay ? videoOverlay.querySelector('iframe') : null;
-
-    if (!videoOverlay || !iframe) return;
-
-    // Đường dẫn cơ sở của video (DyLPhqrVt6E)
-    // Tên ID video có thể thay đổi, nhưng ID này là cố định cho nội dung hiện tại
-    const videoIdCode = "DyLPhqrVt6E"; 
-    const baseUrl = `https://www.youtube.com/embed/${videoIdCode}`; 
-
-    // Nếu đang hiện (display là 'flex')
-    if (window.getComputedStyle(videoOverlay).display === 'flex') {
-        videoOverlay.style.display = 'none';
-        // DỪNG VIDEO: Reset src về đường dẫn cơ bản (không autoplay)
-        iframe.src = baseUrl;
-
-    } else {
-        // HIỆN VIDEO: Đảm bảo set display là 'flex'
-        videoOverlay.style.display = 'flex'; 
-        // PHÁT VIDEO: Thêm tham số autoplay=1 vào đường dẫn
-        iframe.src = baseUrl + "?autoplay=1"; 
-    }
-}
