@@ -1,17 +1,59 @@
-<section class="course-detail-hero">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ja="試験対策 - ネイティブ センセイ" data-en="Exam Prep - Native Sensei">Exam Prep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" class="home-link">
+               <img src="Media.jfif" alt="Logo" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">ネイティブ センセイ</span>
+                    <span class="sub-brand" data-ja="オンライン英会話スクール" data-en="Online English School">Online English School</span>
+                </div>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html#program" data-ja="プログラム" data-en="Program">プログラム</a>
+            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+            <div class="nav-dropdown">
+                <a href="index.html#courses" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="kids.html" data-ja="子供向け (25分)" data-en="Kids (25 min)">Kids (25 min)</a>
+                    <a href="students.html" data-ja="学生向け (50分)" data-en="Students (50 min)">Students (50 min)</a>
+                    <a href="business.html" data-ja="社会人向け (50分)" data-en="Business (50 min)">Business (50 min)</a>
+                    <a href="exam.html" data-ja="試験対策 (50分)" data-en="Exam Prep (50 min)">Exam Prep (50 min)</a>
+                </div>
+            </div>
+            <a href="index.html#pricing" data-ja="料金" data-en="Pricing">Pricing</a>
+            <a href="mailto:contact@nativesensei.com" class="nav-cta-btn" data-ja="お問い合わせ" data-en="Contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active" data-lang-code="ja" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" data-lang-code="en" onclick="setLanguage('en'); return false;">English</a>
+        </div>
+    </header>
+
+    <section class="course-detail-hero">
         <div class="container">
             <div class="detail-grid">
                 <div class="detail-image">
                     <img src="img_exam.jpg" alt="Exam Prep" class="ai-generated-img">
                 </div>
                 <div class="detail-content">
-                    <h1 data-ja="TOEIC/IELTS 試験対策" data-en="Exam Prep">TOEIC/IELTS 試験対策</h1>
+                    <h1 data-ja="TOEIC/IELTS 試験対策" data-en="TOEIC/IELTS Exam Prep">TOEIC/IELTS 試験対策</h1>
                     <div class="course-meta">
-                        <span class="course-tag" data-ja="目標達成" data-en="Goal Oriented">目標達成</span>
+                        <span class="course-tag" data-ja="目標達成" data-en="Target Driven">目標達成</span>
                         <span class="duration-tag"><i class="far fa-clock"></i> 50 min</span>
                     </div>
-                    <p data-ja="試験の傾向と対策を熟知した講師が、50分間じっくりと弱点を分析。最短ルートでのスコアアップをサポートします。" 
-                       data-en="Deep weakness analysis in 50-minute sessions. Achieve your target score through the shortest path with expert guidance.">
+                    <p data-ja="試験の傾向と対策を熟知した講師が、50分間じっくりと弱点を分析。確実にスコアアップを狙います。" 
+                       data-en="Our experts analyze your weaknesses in 50-minute focused sessions to guarantee your target score.">
                        50分間じっくりと弱点を分析し、確実なスコアアップを狙います。
                     </p>
                     <a href="mailto:contact@nativesensei.com" class="main-cta-btn" data-ja="無料体験を予約する" data-en="Book a FREE Trial">無料体験を予約する</a>
@@ -19,3 +61,5 @@
             </div>
         </div>
     </section>
+</body>
+</html>
