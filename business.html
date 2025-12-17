@@ -1,17 +1,59 @@
-<section class="course-detail-hero">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ja="ビジネス英会話 - ネイティブ センセイ" data-en="Business English - Native Sensei">Business English</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" class="home-link">
+               <img src="Media.jfif" alt="Logo" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">ネイティブ センセイ</span>
+                    <span class="sub-brand" data-ja="オンライン英会話スクール" data-en="Online English School">Online English School</span>
+                </div>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html#program" data-ja="プログラム" data-en="Program">プログラム</a>
+            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+            <div class="nav-dropdown">
+                <a href="index.html#courses" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="kids.html" data-ja="子供向け (25分)" data-en="Kids (25 min)">Kids (25 min)</a>
+                    <a href="students.html" data-ja="学生向け (50分)" data-en="Students (50 min)">Students (50 min)</a>
+                    <a href="business.html" data-ja="社会人向け (50分)" data-en="Business (50 min)">Business (50 min)</a>
+                    <a href="exam.html" data-ja="試験対策 (50分)" data-en="Exam Prep (50 min)">Exam Prep (50 min)</a>
+                </div>
+            </div>
+            <a href="index.html#pricing" data-ja="料金" data-en="Pricing">Pricing</a>
+            <a href="mailto:contact@nativesensei.com" class="nav-cta-btn" data-ja="お問い合わせ" data-en="Contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active" data-lang-code="ja" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" data-lang-code="en" onclick="setLanguage('en'); return false;">English</a>
+        </div>
+    </header>
+
+    <section class="course-detail-hero">
         <div class="container">
             <div class="detail-grid">
                 <div class="detail-image">
                     <img src="img_business.jpg" alt="Business Course" class="ai-generated-img">
                 </div>
                 <div class="detail-content">
-                    <h1 data-ja="ビジネス英会話 (社会人向け)" data-en="Business English">ビジネス英会話 (社会人向け)</h1>
+                    <h1 data-ja="ビジネス英会話 (社会人向け)" data-en="Business English (Professionals)">ビジネス英会話 (社会人向け)</h1>
                     <div class="course-meta">
-                        <span class="course-tag" data-ja="対象：社会人・エグゼクティブ" data-en="Professionals">対象：社会人</span>
+                        <span class="course-tag" data-ja="対象：社会人" data-en="Professionals">対象：社会人</span>
                         <span class="duration-tag"><i class="far fa-clock"></i> 50 min</span>
                     </div>
-                    <p data-ja="キャリアアップに直結する実践的な交渉やプレゼン力を習得。1レッスン50分で、即戦力となる英語力を身につけます。" 
-                       data-en="Master negotiation and presentation skills for your career. 50-minute lessons designed for real-world business success.">
+                    <p data-ja="実践的な交渉やプレゼン力を習得。1レッスン50分で、即戦力となる英語力を身につけます。" 
+                       data-en="Master negotiation and presentation skills. 50-minute lessons designed for immediate real-world business success.">
                        1レッスン50分で、即戦力となる英語力を身につけます。
                     </p>
                     <a href="mailto:contact@nativesensei.com" class="main-cta-btn" data-ja="無料体験を予約する" data-en="Book a FREE Trial">無料体験を予約する</a>
@@ -19,3 +61,5 @@
             </div>
         </div>
     </section>
+</body>
+</html>
