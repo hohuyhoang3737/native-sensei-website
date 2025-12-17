@@ -897,3 +897,74 @@ a {
     .detail-grid { flex-direction: column; text-align: center; }
     .features-grid { flex-direction: column; align-items: center; }
 }
+/* CSS DÀNH RIÊNG CHO TRANG CHI TIẾT KHÓA HỌC */
+.course-detail-hero {
+    padding: 80px 5%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.detail-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+.detail-image {
+    flex: 1;
+}
+
+.ai-generated-img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.detail-content {
+    flex: 1;
+    text-align: left;
+}
+
+.course-meta {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.course-tag {
+    background: var(--secondary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.duration-tag {
+    background: #e8f0fe;
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Fix cho mobile */
+@media (max-width: 768px) {
+    .detail-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    .detail-content {
+        text-align: center;
+    }
+    .course-meta {
+        justify-content: center;
+    }
+}
