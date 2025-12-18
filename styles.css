@@ -631,6 +631,7 @@ a {
     margin-right: auto;
 }
 
+/* --- PHẦN KHÓA HỌC (ĐÃ CẬP NHẬT) --- */
 .course-card {
     background-color: white;
     border-radius: 12px;
@@ -638,14 +639,17 @@ a {
     width: calc(25% - 22.5px); 
     min-width: 250px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
     text-align: center;
     border-top: 5px solid var(--primary-color);
+    
+    /* Hiệu ứng mượt mà khi di chuột */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Hiện bàn tay để khách biết có thể nhấn vào cả hộp */
 }
 
 .course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); /* Nổi lên cao hơn một chút (-10px thay vì -5px) */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .course-icon {
@@ -668,18 +672,21 @@ a {
     min-height: 80px; 
 }
 
+/* Định dạng nút Learn More */
 .course-cta {
     display: inline-block;
-    color: var(--secondary-color);
-    font-weight: bold;
-    border: 2px solid var(--secondary-color);
-    padding: 8px 15px;
-    border-radius: 5px;
     margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+    font-weight: bold;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.course-cta:hover {
+/* Hiệu ứng khi di chuột vào CARD thì NÚT tự đổi màu */
+.course-card:hover .course-cta {
     background-color: var(--secondary-color);
     color: white;
 }
@@ -976,4 +983,5 @@ a {
         justify-content: center;
     }
 }
+
 
