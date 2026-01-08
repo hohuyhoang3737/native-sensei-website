@@ -984,4 +984,68 @@ a {
     }
 }
 
+/* --- CSS CHO BẢNG HỌC PHÍ --- */
+.pricing-container {
+    padding: 80px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.pricing-table-wrapper {
+    overflow-x: auto; /* Giúp xem được bảng trên điện thoại bằng cách vuốt ngang */
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Đổ bóng nhẹ cho sang trọng */
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Đảm bảo bảng không bị quá hẹp */
+}
+
+.pricing-table th {
+    background: #003366; /* Màu xanh thương hiệu của bạn */
+    color: white;
+    padding: 18px;
+    font-size: 1.1rem;
+}
+
+.pricing-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 1rem;
+}
+
+/* Hiệu ứng khi di chuột qua từng dòng */
+.pricing-table tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Nhãn ưu đãi (Badge) */
+.badge-free {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Hộp giới thiệu học viên (Referral Box) */
+.referral-box {
+    transition: all 0.3s ease;
+}
+
+.referral-box:hover {
+    transform: translateY(-5px); /* Nhích nhẹ lên khi di chuột vào */
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+
+/* Hỗ trợ hiển thị trên điện thoại */
+@media (max-width: 768px) {
+    .pricing-table td, .pricing-table th {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+}
+
 
