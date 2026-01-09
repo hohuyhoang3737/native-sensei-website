@@ -1544,43 +1544,7 @@ a {
 }
 
 
-@media (max-width: 768px) {
-    /* 1. PHÁ BỎ MỐC 600PX CỦA BẢNG KIDS */
-    .pricing-table-wrapper table.pricing-table {
-        min-width: 100% !important; /* Ghi đè lên min-width: 600px trong HTML */
-        width: 100% !important;
-        table-layout: fixed !important; /* Ép chia cột theo tỷ lệ % */
-    }
 
-    /* 2. CHIA LẠI TỶ LỆ CỘT CHO ĐỀU (Tổng 100%) */
-    .pricing-table th:nth-child(1), 
-    .pricing-table td:nth-child(1) { width: 22% !important; } /* Cột Số buổi */
-    
-    .pricing-table th:nth-child(2), 
-    .pricing-table td:nth-child(2) { width: 38% !important; } /* Cột Học phí */
-    
-    .pricing-table th:nth-child(3), 
-    .pricing-table td:nth-child(3) { width: 40% !important; } /* Cột Ưu đãi */
-
-    /* 3. THU NHỎ CÁC NHÃN "PHỔ BIẾN", "GIÁ TỐT" ĐỂ KHÔNG CHẾM CHỖ */
-    .pricing-table span[style*="border-radius: 20px"] {
-        padding: 2px 6px !important;
-        font-size: 0.6rem !important;
-        display: inline-block !important;
-        margin-bottom: 3px !important;
-    }
-
-    .pricing-table div[style*="font-size: 0.85rem"] {
-        font-size: 0.65rem !important; /* Thu nhỏ dòng chữ dưới nhãn */
-    }
-
-    /* 4. CHỈNH CÁC Ô CHO GỌN GÀNG */
-    .pricing-table th, .pricing-table td {
-        padding: 10px 2px !important;
-        font-size: 0.7rem !important;
-        word-wrap: break-word !important;
-    }
-}
 @media (max-width: 768px) {
     /* Ép container không cho xuống dòng */
     .step-container {
@@ -1762,3 +1726,4 @@ table {
         width: fit-content;
     }
 }
+
