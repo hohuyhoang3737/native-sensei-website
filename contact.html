@@ -1,52 +1,81 @@
-<section style="max-width: 1000px; margin: 0 auto; padding: 60px 20px 40px;">
-    <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 50px; font-size: 2rem;">Steps to Start</h2>
-    
-    
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; flex-wrap: wrap; gap: 10px;">
-        
-        <div style="flex: 1; min-width: 140px;">
-            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">1</div>
-            <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold; margin: 0; color: #0d47a1;">Send Form</p>
-        </div>
-
-        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <div style="flex: 1; min-width: 140px;">
-            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">2</div>
-            <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold; margin: 0; color: #0d47a1;">Consultation</p>
-        </div>
-
-        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <div style="flex: 1; min-width: 140px;">
-            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">3</div>
-            <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold; margin: 0; color: #0d47a1;">Free Trial</p>
-        </div>
-
-        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <div style="flex: 1; min-width: 140px;">
-            <div style="background: #ff5722; color: white; width: 60px; height: 60px; border-radius: 50%; line-height: 60px; margin: 0 auto 15px; font-weight: bold; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(255,87,34,0.4);">4</div>
-            <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; margin: 0; color: #ff5722; font-size: 1.1rem;">Start Learning</p>
-        </div>
-
-    </div>
-</section>
-
-<style>
-    @media (max-width: 768px) {
-        .step-arrow {
-            transform: rotate(90deg);
-            margin: 10px 0;
-            width: 100%;
-            display: block;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ja="無料体験レッスン予約 - ネイティブ センセイ" data-en="Book a Free Trial - Native Sensei">Book a Free Trial - Native Sensei</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jfif" href="Media.jfif">
+    <script src="script.js"></script> 
+    <style>
+        .step-container { display: flex; justify-content: space-between; align-items: center; text-align: center; flex-wrap: wrap; gap: 10px; }
+        .step-item { flex: 1; min-width: 120px; }
+        .step-number { width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 10px; font-weight: bold; color: white; }
+        .step-arrow { color: #ccc; font-size: 1.2rem; }
+        @media (max-width: 768px) {
+            .step-arrow { transform: rotate(90deg); width: 100%; margin: 10px 0; }
+            .step-item { min-width: 100%; }
         }
-    }
-</style>
+    </style>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background: #f4f7f9;">
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" class="home-link">
+               <img src="Media.jfif" alt="Logo" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">NATIVE SENSEI</span>
+                </div>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html#program" data-ja="プログラム" data-en="Program">Program</a>
+            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+            <div class="nav-dropdown">
+                <a href="#" class="dropbtn" data-ja="コース" data-en="Courses">Courses <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
+                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
+                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
+                </div>
+            </div>
+            <a href="index.html#pricing" data-ja="授業料" data-en="Tuition Fees">Tuition Fees</a>
+            <a href="contact.html" class="nav-cta-btn" data-ja="無料体験レッスン" data-en="Book a Free Trial">Book a Free Trial</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" onclick="setLanguage('en'); return false;">English</a>
+        </div>
+    </header>
+
+    <main style="padding-bottom: 60px;">
+        <section style="max-width: 900px; margin: 0 auto; padding: 50px 20px;">
+            <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 40px;">Steps to Start</h2>
+            [Image of a logical 4-step workflow diagram showing form submission, consultation, trial lesson, and enrollment]
+            <div class="step-container">
+                <div class="step-item">
+                    <div class="step-number" style="background: #0d47a1;">1</div>
+                    <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold;">Send Form</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-item">
+                    <div class="step-number" style="background: #0d47a1;">2</div>
+                    <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold;">Consultation</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-item">
+                    <div class="step-number" style="background: #0d47a1;">3</div>
+                    <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold;">Free Trial</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-item">
+                    <div class="step-number" style="background: #ff5722;">4</div>
+                    <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; color: #ff5722;">Start Learning</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 20px;">
+            <div style="max-width: 600px
