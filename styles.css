@@ -751,8 +751,12 @@ a {
 }
 
 
-
-
+/* Media Queries cho màn hình nhỏ hơn */
+@media (max-width: 992px) {
+    .solution-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
     .steps-grid {
         flex-direction: column;
         max-width: 500px;
@@ -770,7 +774,26 @@ a {
     }
 }
 
-
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap; 
+        padding: 10px 5%;
+    }
+    .logo-container {
+        width: 100%; 
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .brand-text {
+        text-align: center; 
+    }
+    .main-nav {
+        margin-top: 10px;
+        order: 3; 
+        width: 100%;
+        text-align: center;
+        display: none; 
+    }
     .lang-switcher {
         order: 2;
         margin-left: auto;
@@ -885,7 +908,9 @@ a {
     margin-bottom: 15px;
 }
 
-
+@media (max-width: 768px) {
+    .detail-grid { flex-direction: column; text-align: center; }
+    .features-grid { flex-direction: column; align-items: center; }
 }
 /* CSS DÀNH RIÊNG CHO TRANG CHI TIẾT KHÓA HỌC */
 .course-detail-hero {
@@ -945,8 +970,12 @@ a {
     font-weight: bold;
 }
 
-
-
+/* Fix cho mobile */
+@media (max-width: 768px) {
+    .detail-grid {
+        flex-direction: column;
+        text-align: center;
+    }
     .detail-content {
         text-align: center;
     }
@@ -1011,78 +1040,12 @@ a {
     box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
 }
 
-
-}
-/* ============================================================
-   CHỈ DÁN ĐOẠN NÀY VÀO CUỐI FILE 1000 DÒNG CỦA BẠN
-   ============================================================ */
-
+/* Hỗ trợ hiển thị trên điện thoại */
 @media (max-width: 768px) {
-    /* 1. CHẶN TRÀN MÀN HÌNH NGANG */
-    html, body {
-        overflow-x: hidden !important;
-        position: relative;
-        width: 100%;
-    }
-
-    /* 2. SỬA HEADER: Đẩy nội dung xuống để không bị đè chữ */
-    .main-header {
-        position: relative !important; /* Quan trọng: Để không đè lên Hero */
-        flex-direction: column !important;
-        padding: 15px 10px !important;
-        height: auto !important;
-    }
-
-    /* 3. HIỆN MENU & TAB: Fix lỗi mất menu trên mobile */
-    .main-nav {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px !important;
-        margin-top: 10px !important;
-        width: 100% !important;
-    }
-
-    .main-nav a {
-        background: #f0f2f5 !important; /* Giữ dạng tab dễ bấm */
-        padding: 6px 10px !important;
-        border-radius: 15px !important;
-        font-size: 0.8rem !important;
-        margin: 2px !important;
-    }
-
-    /* 4. FIX ẢNH GIÁO VIÊN: Chống phóng to quá mức */
-    .teacher-photo-small, .logo-img, .main-hero-img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    .teacher-photo-small {
-        width: 120px !important; /* Ép ảnh giáo viên về cỡ nhỏ chuẩn */
-        margin: 0 auto !important;
-    }
-
-    /* 5. ÉP CÁC CỘT DÀI THÀNH HÀNG DỌC (Hết tràn ngang) */
-    .hero-section, .problem-list, .solution-grid, .course-grid, .footer-content {
-        flex-direction: column !important;
-        display: flex !important;
-        align-items: center !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    /* Các ô nội dung chiếm 100% chiều ngang điện thoại */
-    .problem-item, .course-card, .step-item {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 6. SỬA TIÊU ĐỀ: Không cho chữ to quá làm tràn lề */
-    h1, h2 {
-        font-size: 1.5rem !important;
-        word-wrap: break-word !important;
+    .pricing-table td, .pricing-table th {
+        padding: 12px 10px;
+        font-size: 0.9rem;
     }
 }
+
 
