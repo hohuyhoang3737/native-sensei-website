@@ -1669,3 +1669,96 @@ a {
         text-align: left !important;
     }
 }
+
+/* Đảm bảo toàn bộ container không bị tràn */
+section#pricing, .tuition-section {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 20px 10px !important;
+}
+
+/* Ép bảng luôn nằm gọn trong màn hình */
+table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important; /* Quan trọng: Ép các cột chia sẻ không gian */
+    border-collapse: collapse !important;
+    margin: 0 auto !important;
+}
+
+/* Chỉnh cỡ chữ và khoảng cách trong ô cho Mobile */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px 4px !important; /* Giảm padding để tiết kiệm diện tích */
+        font-size: 0.75rem !important; /* Thu nhỏ chữ */
+        word-wrap: break-word !important; /* Cho phép ngắt dòng nếu chữ dài */
+    }
+
+    /* Ưu tiên độ rộng cho các cột quan trọng */
+    th:nth-child(1), td:nth-child(1) { width: 25%; } /* Cột Lessons */
+    th:nth-child(2), td:nth-child(2) { width: 35%; } /* Cột Total Fee */
+    th:nth-child(3), td:nth-child(3) { width: 40%; } /* Cột Offer/Popular */
+
+    /* Thu nhỏ các nhãn dán "Popular" hoặc "Best Value" */
+    .popular-badge, .value-badge, [style*="background: #ff5722"] {
+        font-size: 0.6rem !important;
+        padding: 2px 5px !important;
+        display: inline-block !important;
+    }
+}
+
+/* Sửa lỗi đè chữ Learning Steps */
+@media (max-width: 768px) {
+    .learning-steps-container { /* Thay bằng class container của bạn nếu khác */
+        display: flex !important;
+        flex-direction: column !important; /* Chuyển sang hàng dọc để đủ chỗ chứa chữ */
+        gap: 20px !important;
+    }
+
+    .step-card { /* Thay bằng class của từng ô bước 1, 2, 3 */
+        height: auto !important; /* Cho phép khung cao theo nội dung chữ */
+        min-height: 200px !important;
+        padding: 20px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-card p, .step-card span {
+        line-height: 1.6 !important; /* Khoảng cách dòng thoáng hơn */
+        font-size: 0.9rem !important;
+        margin: 10px 0 !important;
+        position: static !important; /* Đảm bảo chữ không bị absolute đè nhau */
+    }
+}
+
+/* Sửa bảng học phí cân đối giữa màn hình */
+@media (max-width: 768px) {
+    #pricing, .tuition-section {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        overflow-x: hidden !important; /* Chống tràn ngang */
+    }
+
+    table {
+        width: 100% !important; /* Ép bảng rộng hết màn hình */
+        margin: 20px 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important; /* Chia đều các cột */
+    }
+
+    th, td {
+        padding: 10px 5px !important;
+        font-size: 0.75rem !important; /* Thu nhỏ chữ để vừa khung */
+        text-align: center !important;
+    }
+
+    /* Đảm bảo cột "Offer" (Ưu đãi) không bị mất nhãn Popular/Best Value */
+    .popular-badge, .recommend-badge {
+        font-size: 0.6rem !important;
+        padding: 2px 4px !important;
+        display: block !important; /* Cho nhãn xuống dòng cho đỡ chật */
+        margin: 5px auto 0 !important;
+        width: fit-content;
+    }
+}
