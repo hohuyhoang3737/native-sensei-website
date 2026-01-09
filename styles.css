@@ -1187,7 +1187,7 @@ a {
         width: 100% !important;
         overflow-x: auto !important; /* Hiện thanh cuộn ngang cho bảng */
         -webkit-overflow-scrolling: touch;
-        white-space: nowrap; /* Không cho chữ trong bảng xuống dòng tùy tiện */
+        white-space: nowrap; /* Không cho chữ trong bảng  tùy tiện */
     }
 
     table th, table td {
@@ -1216,7 +1216,7 @@ a {
     .main-nav {
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: nowrap !important; /* Ép không cho xuống dòng */
+        flex-wrap: nowrap !important; /* Ép không cho  */
         overflow-x: auto !important; /* Nếu quá dài thì cho vuốt ngang nhẹ */
         justify-content: flex-start !important;
         gap: 5px !important;
@@ -1545,16 +1545,6 @@ a {
 
 
 
-@media (max-width: 768px) {
-    /* Ép container không cho xuống dòng */
-    .step-container {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 5px !important;
-        justify-content: space-between !important;
-        padding: 10px 0 !important;
-    }
 
     /* Bẻ gãy lệnh min-width: 100% cũ */
     .step-item {
