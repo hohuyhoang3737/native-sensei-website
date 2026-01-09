@@ -9,13 +9,36 @@
     <link rel="icon" type="image/jfif" href="Media.jfif">
     <script src="script.js"></script> 
     <style>
-        .step-container { display: flex; justify-content: space-between; align-items: center; text-align: center; flex-wrap: wrap; gap: 10px; }
-        .step-item { flex: 1; min-width: 120px; }
-        .step-number { width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 10px; font-weight: bold; color: white; }
+        .step-container { display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; gap: 15px; }
+        /* Tạo hiệu ứng Card trắng như ảnh mẫu */
+        .step-item { 
+            background: white; 
+            padding: 30px 15px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            flex: 1; 
+            min-width: 160px; 
+        }
+        .step-number { width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; color: white; font-size: 1.2rem; }
         .step-arrow { color: #ccc; font-size: 1.2rem; }
+        
         @media (max-width: 768px) {
             .step-arrow { transform: rotate(90deg); width: 100%; margin: 10px 0; }
             .step-item { min-width: 100%; }
+        }
+        
+        .contact-form-container {
+            max-width: 650px; 
+            margin: 40px auto 0; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 25px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-family: inherit;
         }
     </style>
 </head>
@@ -50,32 +73,56 @@
         </div>
     </header>
 
-    <main style="padding-bottom: 60px;">
-        <section style="max-width: 900px; margin: 0 auto; padding: 50px 20px;">
-            <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 40px;">Steps to Start</h2>
-            [Image of a logical 4-step workflow diagram showing form submission, consultation, trial lesson, and enrollment]
+    <main style="padding-bottom: 80px;">
+        <section style="max-width: 1000px; margin: 0 auto; padding: 50px 20px;">
+            <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 40px; font-size: 2rem;">Steps to Start</h2>
+            
             <div class="step-container">
                 <div class="step-item">
                     <div class="step-number" style="background: #0d47a1;">1</div>
-                    <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold;">Send Form</p>
+                    <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold; margin: 0;">Send Form</p>
                 </div>
                 <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
                 <div class="step-item">
                     <div class="step-number" style="background: #0d47a1;">2</div>
-                    <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold;">Consultation</p>
+                    <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold; margin: 0;">Consultation</p>
                 </div>
                 <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
                 <div class="step-item">
                     <div class="step-number" style="background: #0d47a1;">3</div>
-                    <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold;">Free Trial</p>
+                    <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold; margin: 0;">Free Trial</p>
                 </div>
                 <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
                 <div class="step-item">
                     <div class="step-number" style="background: #ff5722;">4</div>
-                    <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; color: #ff5722;">Start Learning</p>
+                    <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; margin: 0; color: #ff5722;">Start Learning</p>
                 </div>
             </div>
         </section>
 
         <section style="padding: 0 20px;">
-            <div style="max-width: 600px
+            <div class="contact-form-container">
+                <h3 data-ja="無料体験のお申し込み" data-en="Registration Form" style="text-align: center; color: #003366; margin-bottom: 30px;">Registration Form</h3>
+                
+                <form action="DÁN_LINK_APPS_SCRIPT_CỦA_BẠN" method="POST">
+                    <div class="form-group">
+                        <label data-ja="お名前" data-en="Full Name">Full Name</label>
+                        <input type="text" name="name" required placeholder="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-ja="メールアドレス" data-en="Email Address">Email Address</label>
+                        <input type="email" name="email" required placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-ja="電話番号" data-en="Phone Number">Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="080-xxxx-xxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-ja="ご希望のコース" data-en="Interested Course">Interested Course</label>
+                        <select name="course">
+                            <option value="kids" data-ja="子供向け (Kids)" data-en="Kids English">Kids English</option>
+                            <option value="students" data-ja="学生向け (Students)" data-en="Students English">Students English</option>
+                            <option value="business" data-ja="社会人向け (
