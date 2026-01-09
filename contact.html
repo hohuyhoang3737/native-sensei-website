@@ -10,15 +10,7 @@
     <script src="script.js"></script> 
     <style>
         .step-container { display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; gap: 15px; }
-        /* Tạo hiệu ứng Card trắng như ảnh mẫu */
-        .step-item { 
-            background: white; 
-            padding: 30px 15px; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-            flex: 1; 
-            min-width: 160px; 
-        }
+        .step-item { background: white; padding: 30px 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); flex: 1; min-width: 160px; }
         .step-number { width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; color: white; font-size: 1.2rem; }
         .step-arrow { color: #ccc; font-size: 1.2rem; }
         
@@ -27,19 +19,15 @@
             .step-item { min-width: 100%; }
         }
         
-        .contact-form-container {
-            max-width: 650px; 
-            margin: 40px auto 0; 
-            background: white; 
-            padding: 40px; 
-            border-radius: 25px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        .form-group { margin-bottom: 20px; }
+        .contact-form-container { max-width: 650px; margin: 40px auto; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-family: inherit;
-        }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
+        
+        .sns-footer { background: #002244; color: white; padding: 40px 20px; text-align: center; }
+        .sns-icons { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .sns-icons img { width: 50px; transition: 0.3s; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); }
+        .sns-icons img:hover { transform: scale(1.1); }
     </style>
 </head>
 <body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background: #f4f7f9;">
@@ -56,14 +44,6 @@
         <nav class="main-nav">
             <a href="index.html#program" data-ja="プログラム" data-en="Program">Program</a>
             <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
-            <div class="nav-dropdown">
-                <a href="#" class="dropbtn" data-ja="コース" data-en="Courses">Courses <i class="fas fa-caret-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
-                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
-                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
-                </div>
-            </div>
             <a href="index.html#pricing" data-ja="授業料" data-en="Tuition Fees">Tuition Fees</a>
             <a href="contact.html" class="nav-cta-btn" data-ja="無料体験レッスン" data-en="Book a Free Trial">Book a Free Trial</a>
         </nav>
@@ -73,10 +53,10 @@
         </div>
     </header>
 
-    <main style="padding-bottom: 80px;">
-        <section style="max-width: 1000px; margin: 0 auto; padding: 50px 20px;">
+    <main>
+        <section style="max-width: 1000px; margin: 0 auto; padding: 60px 20px 20px;">
             <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 40px; font-size: 2rem;">Steps to Start</h2>
-            
+            [Image of a logical 4-step workflow diagram showing form submission, consultation, trial lesson, and enrollment]
             <div class="step-container">
                 <div class="step-item">
                     <div class="step-number" style="background: #0d47a1;">1</div>
@@ -102,7 +82,7 @@
 
         <section style="padding: 0 20px;">
             <div class="contact-form-container">
-                <h3 data-ja="無料体験のお申し込み" data-en="Registration Form" style="text-align: center; color: #003366; margin-bottom: 30px;">Registration Form</h3>
+                <h3 data-ja="無料体験のお申し込み" data-en="Registration Form" style="text-align: center; color: #003366; margin-bottom: 30px; font-size: 1.6rem;">Registration Form</h3>
                 
                 <form action="DÁN_LINK_APPS_SCRIPT_CỦA_BẠN" method="POST">
                     <div class="form-group">
@@ -110,19 +90,39 @@
                         <input type="text" name="name" required placeholder="Name">
                     </div>
 
-                    <div class="form-group">
-                        <label data-ja="メールアドレス" data-en="Email Address">Email Address</label>
-                        <input type="email" name="email" required placeholder="example@gmail.com">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                            <label data-ja="メールアドレス" data-en="Email Address">Email Address</label>
+                            <input type="email" name="email" required placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                            <label data-ja="電話番号" data-en="Phone Number">Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="080-xxxx-xxxx">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                            <label data-ja="ご希望のコース" data-en="Interested Course">Course</label>
+                            <select name="course">
+                                <option value="kids" data-ja="子供向け (Kids)" data-en="Kids English">Kids English</option>
+                                <option value="students" data-ja="学生向け (Students)" data-en="Students English">Students English</option>
+                                <option value="business" data-ja="社会人向け (Business)" data-en="Business English">Business English</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                            <label data-ja="現在のレベル" data-en="Current Level">Level</label>
+                            <select name="level">
+                                <option value="beginner" data-ja="初心者" data-en="Beginner">Beginner</option>
+                                <option value="intermediate" data-ja="中級者" data-en="Intermediate">Intermediate</option>
+                                <option value="advanced" data-ja="上級者" data-en="Advanced">Advanced</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label data-ja="電話番号" data-en="Phone Number">Phone Number</label>
-                        <input type="tel" name="phone" required placeholder="080-xxxx-xxxx">
-                    </div>
-
-                    <div class="form-group">
-                        <label data-ja="ご希望のコース" data-en="Interested Course">Interested Course</label>
-                        <select name="course">
-                            <option value="kids" data-ja="子供向け (Kids)" data-en="Kids English">Kids English</option>
-                            <option value="students" data-ja="学生向け (Students)" data-en="Students English">Students English</option>
-                            <option value="business" data-ja="社会人向け (
+                        <label data-ja="学習の目的" data-en="Learning Goal">Learning Goal</label>
+                        <select name="goal">
+                            <option value="travel" data-ja="旅行のため" data-en="For Travel">For Travel</option>
+                            <option value="work" data-ja="仕事のため" data-en="For Work">For Work</option>
+                            <option value="exam" data-ja="試験
