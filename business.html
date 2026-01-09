@@ -1,106 +1,245 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ja="社会人向け英語 - ネイティブ センセイ" data-en="Business English - Native Sensei">Business English - Native Sensei</title>
+    <title data-ja="ネイティブ センセイ English School: コスパ最強のオンラインレッスン" data-en="Native Sensei English School: High-Quality Online Lessons">ネイティブ センセイ English School: コスパ最強のオンラインレッスン</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/jfif" href="Media.jfif">
+    <link rel="apple-touch-icon" href="Media.jfif">
     <script src="script.js"></script> 
 </head>
 <body>
 
     <header class="main-header">
         <div class="logo-container">
-            <a href="index.html" class="home-link">
-               <img src="Media.jfif" alt="Logo" class="logo-img">
+            <a href="/" class="home-link">
+               <img src="Media.jfif" alt="Native Sensei English School Logo" class="logo-img">
                 <div class="brand-text">
                     <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">ネイティブ センセイ</span>
                     <span class="sub-brand" data-ja="オンライン英会話スクール" data-en="Online English School">Online English School</span>
                 </div>
             </a>
         </div>
-        <nav class="main-nav">
-            <a href="index.html#program" data-ja="プログラム" data-en="Program">プログラム</a>
-            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
-            <div class="nav-dropdown">
-                <a href="#" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
-                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
-                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
-                </div>
-            </div>
-            <a href="index.html#pricing" data-ja="授業料" data-en="Tuition Fees">授業料</a>
+   <nav class="main-nav">
+    <a href="#program" data-ja="プログラム" data-en="Program">プログラム</a>
+    <a href="#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+    
+    <div class="nav-dropdown">
+        <a href="#courses" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
+            <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
+            <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
+          
+        </div>
+    </div>
+    
+
+            <a href="#pricing" data-ja="授業料" data-en="Tuition Fees">授業料</a>
             <a href="contact.html" data-ja="無料体験レッスン" data-en="Book a Free Trial" class="nav-cta-btn">無料体験レッスン</a>
         </nav>
+        
         <div class="lang-switcher">
-            <a href="#" class="lang-btn active" onclick="setLanguage('ja'); return false;">日本語</a>
-            <a href="#" class="lang-btn" onclick="setLanguage('en'); return false;">English</a>
+            <a href="#" class="lang-btn active" data-lang-code="ja" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" data-lang-code="en" onclick="setLanguage('en'); return false;">English</a>
         </div>
     </header>
 
-    <section class="course-detail-hero" style="background: #e1f5fe; padding: 100px 20px; text-align: center;">
+
+<section class="course-detail-hero">
         <div class="container">
-            <h1 data-ja="ビジネス・社会人英会話" data-en="Business & Professional English">Tiếng Anh Cho Người Đi Làm</h1>
-            <p data-ja="実践的なキャリアアップのための50分間。" data-en="50 minutes for practical career advancement.">Nâng tầm sự nghiệp toàn cầu với kỹ năng giao tiếp công sở thực chiến.</p>
-            <br>
-            <a href="contact.html" class="main-cta-btn" data-ja="無料体験レッスンに申し込む" data-en="Book Your FREE Trial Lesson Now!">無料体験レッスンに申し込む</a>
-        </div>
-    </section>
-
-    <section class="course-features" style="padding: 60px 20px; background: white;">
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <div style="text-align: center; padding: 30px; border: 1px solid #0288d1; border-radius: 15px;">
-                <i class="fas fa-briefcase" style="font-size: 3rem; color: #0288d1; margin-bottom: 20px;"></i>
-                <h3 data-ja="実践的なトピック" data-en="Practical Topics">Kỹ năng thực chiến</h3>
-                <p data-ja="会議、メール、プレゼンなど即戦力の英語。" data-en="English for meetings, emails, and presentations.">Học cách làm chủ các cuộc đàm phán, viết email và thuyết trình dự án.</p>
-            </div>
-            <div style="text-align: center; padding: 30px; border: 1px solid #0288d1; border-radius: 15px;">
-                <i class="fas fa-user-clock" style="font-size: 3rem; color: #0288d1; margin-bottom: 20px;"></i>
-                <h3 data-ja="柔軟なスケジュール" data-en="Flexible Schedule">Lịch học linh hoạt</h3>
-                <p data-ja="忙しい社会人でも続けやすい予約制。" data-en="Easy booking system for busy professionals.">Tự do đặt lịch học theo khung giờ cá nhân, lý tưởng cho người bận rộn.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing-cta" style="padding: 80px 20px; text-align: center; background: #f4f7f9;">
-        <h2 data-ja="納得の料金プラン" data-en="Reasonable Pricing">Học phí Lớp Business</h2>
-        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <a href="index.html#pricing" class="secondary-cta-btn" style="border: 2px solid #003366; color: #003366; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;">
-                <i class="fas fa-chart-line"></i> Xem bảng học phí chi tiết
-            </a>
-            <a href="contact.html" class="main-cta-btn" style="background: #ff5722; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;" data-ja="無料体験レッスン" data-en="Book a Free Trial">無料体験レッスン</a>
-        </div>
-    </section>
-
-    <footer class="main-footer" style="background: #002244; color: white; padding: 60px 0 20px; font-family: Arial, sans-serif;">
-        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: #ff5722; margin-bottom: 20px; font-size: 1.5rem;" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">Native Sensei</h3>
-                <p style="font-size: 0.9rem; line-height: 1.6; color: #ccc;" data-ja="ネイティブ講師による質の高いレッスン。" data-en="High-quality lessons with professional native teachers.">Trường ngoại ngữ kết nối Việt Nam - Nhật Bản.</p>
-            </div>
-            <div style="flex: 1; min-width: 280px;">
-                <h4 style="margin-bottom: 20px; border-bottom: 2px solid #ff5722; display: inline-block; padding-bottom: 5px;" data-ja="お問い合わせ" data-en="Connect with Us">Kết nối</h4>
-                <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 5px;">
-                    <a href="https://zalo.me/818072775984" target="_blank" style="color: #ccc; text-decoration: none; display: flex; align-items: center;">
-                        <img src="image_d7b43c.png" alt="Zalo" style="width: 28px; height: 28px; border-radius: 5px; margin-right: 12px;"> <span>Zalo: +81 80-7277-5984</span>
-                    </a>
+            <div class="detail-grid">
+                <div class="detail-image">
+                    <img src="img_business.jpg" alt="Business Course" class="ai-generated-img">
+                </div>
+                <div class="detail-content">
+                    <h1 data-ja="社会人・ビジネス英会話" data-en="Business English">Business English (50 min)</h1>
+                    <div class="course-meta">
+                        <span class="course-tag" data-ja="対象：社会人・就活生" data-en="For Professionals">For Professionals</span>
+                        <span class="duration-tag"><i class="far fa-clock"></i> 50 min</span>
+                    </div>
+                    
+                    <div class="course-description">
+                        <p data-ja="オフィスでの実戦的なコミュニケーションに特化した1対1レッスン。電話応対、メール作成、会議での意見表明など、仕事ですぐに使える英語力を身につけます。" 
+                           data-en="1-on-1 lessons focused on practical office communication. Master skills you can use immediately, from handling phone calls and emails to expressing opinions in meetings.">
+                           1-on-1 lessons focused on practical office communication.
+                        </p>
+                        
+                        <ul class="benefit-list" style="list-style: none; padding: 0; margin-top: 20px;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #ff5722;"></i> <span data-ja="電話対応：プロフェッショナルな受け答えと聞き取り" data-en="Telephone Skills: Professional handling and listening">Telephone Skills: Professional handling and listening</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #ff5722;"></i> <span data-ja="英文メール：目的別の正確で失礼のない文書作成" data-en="Business Email: Writing accurate and polite messages">Business Email: Writing accurate and polite messages</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #ff5722;"></i> <span data-ja="会議・交渉：自分の意見を論理的に伝える発信力" data-en="Meetings & Negotiations: Expressing opinions logically">Meetings & Negotiations: Expressing opinions logically</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #ff5722;"></i> <span data-ja="仕事で必須の専門用語とビジネスマナー" data-en="Essential job vocabulary and business etiquette">Essential job vocabulary and business etiquette</span></li>
+                        </ul>
+                    </div>
+                    <a href="mailto:contact@nativesensei.com" class="main-cta-btn" style="background: #ff5722; color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: bold;">BOOK A FREE TRIAL</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <div id="contact-action-sheet" style="position: fixed; bottom: 30px; right: 30px; z-index: 99999;">
-        <button onclick="toggleActionSheet()" id="main-contact-btn" style="background: #ff5722; color: white; border: none; width: 65px; height: 65px; border-radius: 50%; box-shadow: 0 5px 20px rgba(255,87,34,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; outline: none; transition: 0.3s;">
-            <i id="contact-icon" class="fas fa-comments" style="font-size: 28px;"></i>
-        </button>
+    <section class="course-features" style="background: #f4f7f9; padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2rem;" data-ja="ビジネスパーソンに選ばれる理由" data-en="Why Business Pros Choose Us">Why Business Pros Choose Us</h2>
+            <div class="feature-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
+                
+                <div class="feature-item" style="flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="background: rgba(0, 51, 102, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-laptop-house" style="font-size: 1.8rem; color: #003366;"></i>
+                    </div>
+                    <h3 style="color: #003366; margin-bottom: 15px;" data-ja="完全マンツーマン" data-en="Pure 1-on-1">Pure 1-on-1</h3>
+                    <p style="color: #666; line-height: 1.6;" data-ja="周りを気にせず、自分の業務に直結する内容をピンポイントで練習できます。" data-en="Focus on your specific job needs without worrying about other students.">Focus on your specific job needs without worrying about others.</p>
+                </div>
+
+                <div class="feature-item" style="flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="background: rgba(0, 51, 102, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-file-invoice" style="font-size: 1.8rem; color: #003366;"></i>
+                    </div>
+                    <h3 style="color: #003366; margin-bottom: 15px;" data-ja="実用的な教材" data-en="Practical Materials">Practical Materials</h3>
+                    <p style="color: #666; line-height: 1.6;" data-ja="実際のビジネスシーンを想定したロールプレイング教材で、現場の対応力を養います。" data-en="Learn situational responses through role-playing of real business scenarios.">Learn responses through role-playing of real business scenarios.</p>
+                </div>
+
+                <div class="feature-item" style="flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center;">
+                    <div style="background: rgba(0, 51, 102, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-headset" style="font-size: 1.8rem; color: #003366;"></i>
+                    </div>
+                    <h3 style="color: #003366; margin-bottom: 15px;" data-ja="Skype/Zoomで手軽に" data-en="Convenient Online">Convenient Online</h3>
+                    <p style="color: #666; line-height: 1.6;" data-ja="通学不要。オフィスや自宅 từ 隙間時間を利用して効率的に受講可能です。" data-en="No commuting. Efficiently take classes from your office or home during breaks.">No commuting. Efficiently take classes from office or home.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+     <footer class="main-footer" style="background: #002244; color: white; padding: 60px 0 20px; font-family: Arial, sans-serif;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #ff5722; margin-bottom: 20px; font-size: 1.5rem;" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">Native Sensei</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #ccc;" 
+               data-ja="ネイティブ講師による質の高いレッスン。日本とベトナムの架け橋となる英会話スクールです。" 
+               data-en="High-quality lessons with professional native teachers. Connecting Japan and Vietnam.">
+               Trường ngoại ngữ kết nối Việt Nam - Nhật Bản. Đội ngũ giáo viên giàu kinh nghiệm, thấu hiểu nhu cầu học viên.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 150px;">
+            <h4 style="margin-bottom: 20px; border-bottom: 2px solid #ff5722; display: inline-block; padding-bottom: 5px; color: white;" data-ja="リンク" data-en="Quick Links">Liên kết</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 2.5;">
+                <li><a href="index.html#program" style="color: #ccc; text-decoration: none;">Courses</a></li>
+                <li><a href="index.html#pricing" style="color: #ccc; text-decoration: none;">Tuition</a></li>
+                <li><a href="#contact" data-ja="無料体験レッスンを予約する" data-en="Book a Free Trial Now"style="color: #ccc; text-decoration: none;">Book a Free Trial Now</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 280px;">
+            <h4 style="margin-bottom: 20px; border-bottom: 2px solid #ff5722; display: inline-block; padding-bottom: 5px; color: white;" data-ja="お問い合わせ" data-en="Connect with Us">Kết nối</h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 5px;">
+                
+                <a href="https://www.facebook.com/profile.php?id=61583662568044" target="_blank" style="color: #ccc; text-decoration: none; display: flex; align-items: center;">
+                    <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-facebook" style="color: #1877f2; font-size: 1.5rem;"></i>
+                    </div>
+                    <span style="margin-left: 12px;">Facebook Page</span>
+                </a>
+
+                <a href="https://zalo.me/818072775984" target="_blank" style="color: #ccc; text-decoration: none; display: flex; align-items: center;">
+                    <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                    <img src="image_d7b43c.png" alt="Zalo" style="width: 28px; height: 28px; border-radius: 5px; object-fit: cover;">
+                    </div>
+                    <span style="margin-left: 12px;">Zalo: +81 80-7277-5984</span>
+                </a>
+
+                <a href="https://line.me/ti/p/hohuyhoang3737" target="_blank" style="color: #ccc; text-decoration: none; display: flex; align-items: center; transition: 0.3s;">
+                    <div style="width: 30px; display: flex; justify-content: center;">
+                        <i class="fab fa-line" style="color: #00c300; font-size: 1.5rem;"></i>
+                    </div>
+                    <span style="margin-left: 10px;">LINE : +81 80-7277-5984</span>
+                </a>
+
+                <a href="mailto:nativesensei.contact@gmail.com" style="color: #ccc; text-decoration: none; display: flex; align-items: center; transition: 0.3s;">
+                    <div style="width: 30px; display: flex; justify-content: center;">
+                        <i class="fas fa-envelope" style="color: #ff5722; font-size: 1.2rem;"></i>
+                    </div>
+                    <span style="margin-left: 10px;">nativesensei.contact@gmail.com</span>
+                </a>
+            </div>
+        </div>
     </div>
-    <script>
-        function toggleActionSheet() {
-            // Logic toggle y hệt trang Student
-        }
-    </script>
+
+    <div style="text-align: center; margin-top: 50px; padding: 20px 20px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #888;">
+        <p style="margin: 0;">© 2024 Native Sensei English School. All rights reserved.</p>
+    </div>
+</footer>
+    
+
+<div id="contact-action-sheet" style="position: fixed; bottom: 30px; right: 30px; z-index: 99999; font-family: Arial, sans-serif;">
+    
+    <div id="options-sheet" style="display: none; position: absolute; bottom: 80px; right: 0; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); width: 260px; overflow: hidden; border: 1px solid #eee; animation: slideUp 0.3s ease;">
+        <div style="padding: 15px; background: #003366; color: white; text-align: center;">
+            <strong style="display: block; font-size: 1rem;" data-ja="ネイティブ センセイ" data-en="Native Sensei">Native Sensei</strong>
+            <span style="font-size: 0.8rem; opacity: 0.9;" data-ja="お問い合わせ" data-en="Contact Us">Liên hệ tư vấn trực tiếp</span>
+        </div>
+        
+        <a href="https://m.me/61583662568044" target="_blank" style="display: flex; align-items: center; padding: 15px; color: #333; text-decoration: none; border-bottom: 1px solid #f5f5f5; transition: 0.3s;">
+            <div style="width: 30px; display: flex; justify-content: center;">
+                <i class="fab fa-facebook-messenger" style="color: #0084ff; font-size: 1.5rem;"></i>
+            </div>
+            <span style="font-weight: 500; margin-left: 10px;">Messenger</span>
+        </a>
+
+        <a href="https://zalo.me/818072775984" target="_blank" style="display: flex; align-items: center; padding: 15px; color: #333; text-decoration: none; border-bottom: 1px solid #f5f5f5; transition: 0.3s;">
+            <div style="width: 30px; display: flex; justify-content: center;">
+                <i class="fas fa-comment-dots" style="color: #0068ff; font-size: 1.4rem;"></i>
+            </div>
+            <span style="font-weight: 500; margin-left: 10px;">Zalo (+81)</span>
+        </a>
+
+        <a href="https://line.me/ti/p/hohuyhoang3737" target="_blank" style="display: flex; align-items: center; padding: 15px; color: #333; text-decoration: none; transition: 0.3s;">
+            <div style="width: 30px; display: flex; justify-content: center;">
+                <i class="fab fa-line" style="color: #00c300; font-size: 1.6rem;"></i>
+            </div>
+            <span style="font-weight: 500; margin-left: 10px;">LINE ID</span>
+        </a>
+    </div>
+
+    <button onclick="toggleActionSheet()" id="main-contact-btn" style="background: #ff5722; color: white; border: none; width: 65px; height: 65px; border-radius: 50%; box-shadow: 0 5px 20px rgba(255,87,34,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; outline: none; transition: 0.3s;">
+        <i id="contact-icon" class="fas fa-comments" style="font-size: 28px;"></i>
+    </button>
+</div>
+
+<style>
+    /* Hiệu ứng trượt bảng từ dưới lên */
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    #options-sheet a:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<script>
+function toggleActionSheet() {
+    var sheet = document.getElementById('options-sheet');
+    var icon = document.getElementById('contact-icon');
+    var btn = document.getElementById('main-contact-btn');
+    
+    if (sheet.style.display === 'none' || sheet.style.display === '') {
+        sheet.style.display = 'block';
+        icon.className = 'fas fa-times'; // Chuyển thành dấu X khi mở
+        btn.style.background = '#333';   // Chuyển màu nút sang xám/đen khi mở
+    } else {
+        sheet.style.display = 'none';
+        icon.className = 'fas fa-comments'; // Quay lại icon cũ
+        btn.style.background = '#ff5722';   // Quay lại màu cam
+    }
+}
+</script>
 </body>
 </html>
