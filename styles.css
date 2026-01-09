@@ -1202,4 +1202,102 @@ a {
     }
 }
 
+/* ============================================================
+   PHẦN CHỈNH SỬA CHI TIẾT CHO MOBILE - DÁN Ở CUỐI FILE
+   ============================================================ */
+@media (max-width: 768px) {
+    /* 1 & 5. HEADER & NGÔN NGỮ: Ép chung hàng, hiện rõ nút */
+    .main-header {
+        padding: 5px 2% !important;
+        position: fixed !important;
+        background: #fff !important;
+    }
+
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Ép không cho xuống dòng */
+        overflow-x: auto !important; /* Nếu quá dài thì cho vuốt ngang nhẹ */
+        justify-content: flex-start !important;
+        gap: 5px !important;
+        margin: 5px 0 !important;
+        padding-bottom: 5px;
+    }
+
+    .main-nav a {
+        font-size: 0.65rem !important; /* Thu nhỏ để vừa hàng */
+        padding: 4px 6px !important;
+        white-space: nowrap !important;
+        background: #f0f2f5 !important;
+        border-radius: 4px !important;
+        color: var(--primary-color) !important;
+    }
+
+    /* Nút Đăng ký và Ngôn ngữ */
+    .nav-cta-btn {
+        background: #ff5722 !important;
+        color: #fff !important;
+        font-size: 0.65rem !important;
+        padding: 5px 8px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .lang-switcher {
+        display: flex !important;
+        font-size: 0.65rem !important;
+        gap: 5px;
+    }
+
+    /* 2 & 3. LAYOUT & KHUNG "PROBLEMS": Thu nhỏ bo viền, làm đều khung */
+    .hero-section, .problem-list, .course-grid {
+        padding: 15px 3% !important; /* Giảm khoảng cách trắng hai bên */
+    }
+
+    .problem-list {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Hiện 2 khung song song */
+        gap: 8px !important;
+    }
+
+    .problem-item {
+        padding: 10px !important; /* Thu nhỏ padding bên trong khung */
+        margin: 0 !important;
+        min-height: 120px !important; /* Làm các khung cao bằng nhau */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 8px !important;
+    }
+
+    .problem-item h3, .problem-item p {
+        font-size: 0.7rem !important; /* Thu nhỏ chữ để bao quát nội dung */
+        line-height: 1.2 !important;
+    }
+
+    /* 4. BẢNG HỌC PHÍ: Xóa khoảng trắng thừa, dàn đều màn hình */
+    .tuition-table-container {
+        margin: 0 -3% !important; /* Kéo tràn ra sát mép màn hình điện thoại */
+        width: 105vw !important; 
+        overflow-x: auto !important;
+    }
+
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    table th, table td {
+        padding: 6px 4px !important;
+        font-size: 0.65rem !important;
+        white-space: nowrap; /* Giữ bảng gọn gàng */
+    }
+
+    /* Tổng thể size chữ tiêu đề */
+    h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 10px !important;
+    }
+}
+
 
