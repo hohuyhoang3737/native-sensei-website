@@ -1120,3 +1120,86 @@ a {
     }
 }
 
+/* ============================================================
+   DÁN VÀO CUỐI FILE - TỐI ƯU CHI TIẾT CHO MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. SỬA HEADER: Ép các tab quan trọng lên cùng 1 hàng */
+    .main-header {
+        position: fixed !important; /* Giữ header cố định như web */
+        flex-direction: column !important;
+        padding: 5px 2% !important;
+        background: #fff !important;
+    }
+
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important; /* Ép nằm ngang */
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        margin-top: 5px !important;
+    }
+
+    /* Thu nhỏ chữ để các tab nhét vừa 1 hàng */
+    .main-nav a {
+        font-size: 0.7rem !important; 
+        padding: 4px 6px !important;
+        margin: 0 !important;
+        background: transparent !important; /* Bỏ nền xám để giống web */
+    }
+
+    /* 2. SỬA NÚT ĐĂNG KÝ: Lấy lại màu cam đặc trưng */
+    .nav-cta-btn, button.cta-btn, .book-btn {
+        background-color: #ff5722 !important; /* Màu cam gốc của bạn */
+        color: white !important;
+        opacity: 1 !important;
+        font-weight: bold !important;
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+        border-radius: 5px !important;
+        display: inline-block !important;
+        text-shadow: none !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+    }
+
+    /* 3. LAYOUT: Thu nhỏ size thay vì dồn cột quá mức */
+    .hero-section, .course-grid, .problem-list {
+        padding: 20px 3% !important;
+    }
+    
+    /* Cho phép 2 cột nếu nội dung ngắn để tiết kiệm không gian */
+    .problem-list {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Chia 2 cột nhỏ */
+        gap: 10px !important;
+    }
+
+    .problem-item {
+        padding: 10px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* 4. FIX BẢNG HỌC PHÍ: Cho phép vuốt ngang để xem hết ghi chú */
+    .tuition-table-container, table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important; /* Hiện thanh cuộn ngang cho bảng */
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap; /* Không cho chữ trong bảng xuống dòng tùy tiện */
+    }
+
+    table th, table td {
+        padding: 8px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Thu nhỏ ảnh Hero để không chiếm hết màn hình */
+    .main-hero-img {
+        max-width: 80% !important;
+        margin: 10px auto !important;
+    }
+}
+
+
