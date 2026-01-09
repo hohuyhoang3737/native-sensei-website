@@ -1,160 +1,201 @@
-/* ============================================================
-   PHẦN 1: GIỮ NGUYÊN CẤU TRÚC GIAO DIỆN GỐC (DESKTOP)
-   ============================================================ */
+/* =========================================
+   1. THIẾT LẬP CƠ BẢN (RESET)
+   ========================================= */
 :root {
     --primary-color: #1a237e;
     --secondary-color: #ff5722;
     --text-color: #333;
     --light-bg: #f5f5f5;
-    --cta-bg: #ff5722;
-    --cta-hover: #e64a19;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0; padding: 0;
-    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ngăn vỡ ngang tuyệt đối */
     background-color: white;
 }
 
-/* Header cố định trên cùng */
+/* =========================================
+   2. HEADER & NAVIGATION (DESKTOP CHUẨN)
+   ========================================= */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 10px 5%;
     background-color: white;
     position: fixed;
-    top: 0; left: 0; width: 100%;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo-container { display: flex; align-items: center; flex-shrink: 0; }
-.logo-img { width: 40px; height: 40px; margin-right: 10px; }
-.brand-name { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
 
-/* Điều hướng chính */
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
 .main-nav {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
     flex-grow: 1;
-    margin: 0 20px;
+    justify-content: center;
 }
 
 .main-nav a {
-    margin: 0 10px;
-    font-size: 1rem;
-    font-weight: 500;
-    white-space: nowrap;
     text-decoration: none;
     color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .nav-cta-btn {
     background-color: var(--secondary-color);
     color: white !important;
-    padding: 8px 15px;
+    padding: 8px 18px;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 /* Dropdown Menu */
-.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown {
+    position: relative;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 250px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    top: 100%;
+    left: 0;
     border-top: 3px solid var(--secondary-color);
-    top: 100%; left: 0;
 }
-.nav-dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a { display: block; padding: 12px 16px !important; margin: 0 !important; }
 
-/* Các Section khác (Hero, Problem, Solution, v.v.) */
-.hero-section { display: flex; align-items: center; padding: 120px 5% 80px; background-color: var(--light-bg); }
-.hero-content { flex: 1; max-width: 55%; }
-.hero-title { font-size: 2.8rem; color: var(--primary-color); }
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
 
-.problem-list, .solution-grid, .steps-grid, .course-grid {
-    display: flex; gap: 25px; justify-content: center;
+.dropdown-content a {
+    display: block !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================================
+   3. NỘI DUNG CHÍNH (MAIN SECTIONS)
+   ========================================= */
+main {
+    padding-top: 80px; /* Tránh bị Header che trên Desktop */
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    padding: 60px 5%;
+    background-color: var(--light-bg);
+}
+
+.hero-content { flex: 1; }
+.hero-title { font-size: 2.5rem; color: var(--primary-color); }
+
+.course-grid, .solution-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 5%;
 }
 
 .course-card {
-    background: white; border-radius: 12px; padding: 30px;
-    width: calc(25% - 22.5px); min-width: 250px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    border-top: 5px solid var(--primary-color);
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    min-width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* ============================================================
-   PHẦN 2: TỐI ƯU MOBILE (GOM TẤT CẢ VÀO ĐÂY ĐỂ TRÁNH VỠ)
-   ============================================================ */
+/* =========================================
+   4. SIÊU TỐI ƯU MOBILE (FIX TRIỆT ĐỂ VỠ LAYOUT)
+   ========================================= */
 @media (max-width: 768px) {
-    /* Khắc phục Header bị che hoặc biến mất */
+    /* Ép Header xuống dòng để không bị chồng lấn */
     .main-header {
         flex-direction: column !important;
-        padding: 10px !important;
+        padding: 15px 10px !important;
         height: auto !important;
+        position: relative !important; /* Đổi về relative để không che nội dung */
     }
 
-    .logo-container { margin-bottom: 10px; width: 100%; justify-content: center; }
+    main { padding-top: 0 !important; }
 
-    /* HIỂN THỊ CÁC TAB COURSE, TEACHERS TRÊN ĐIỆN THOẠI */
+    .logo-container {
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hiện Menu thành các Tab dễ bấm */
     .main-nav {
-        display: flex !important; /* Buộc hiện menu */
+        display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin: 5px 0 !important;
         gap: 8px !important;
+        width: 100% !important;
+        justify-content: center !important;
     }
 
-    .main-nav a {
+    .main-nav a, .nav-dropdown {
+        background: #f0f2f5;
+        padding: 8px 12px !important;
+        border-radius: 20px;
         font-size: 0.85rem !important;
-        padding: 6px 10px !important;
-        background: #f0f2f5; /* Dễ nhìn và dễ bấm hơn */
-        border-radius: 15px;
-        margin: 2px !important;
+        margin: 0 !important;
     }
 
     .nav-cta-btn {
-        width: 100% !important;
-        text-align: center;
         background-color: var(--secondary-color) !important;
+        color: white !important;
+        width: 90% !important;
+        text-align: center;
         margin-top: 5px !important;
     }
 
-    /* Đẩy nội dung chính xuống để Header không đè lên chữ */
-    main, .hero-section, .course-detail-hero {
-        padding-top: 200px !important; 
+    /* Các hàng ngang biến thành hàng dọc */
+    .hero-section, .course-grid, .solution-grid, .footer-content {
         flex-direction: column !important;
         text-align: center !important;
     }
 
-    .hero-content { max-width: 100% !important; }
-    .hero-title { font-size: 1.8rem !important; }
-
-    /* Fix các lưới nội dung (Grid) chuyển sang hàng dọc để không vỡ layout */
-    .problem-list, .solution-grid, .steps-grid, .course-grid, .detail-grid, .footer-content {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .course-card, .problem-item, .step-item {
+    .course-card {
         width: 100% !important;
-        margin-bottom: 15px;
     }
 
-    .ai-generated-img { max-width: 100% !important; height: auto !important; }
-
-    /* Cho phép bảng học phí vuốt ngang thay vì co rúm */
-    .pricing-table-wrapper {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
+    .ai-generated-img, .logo-img {
+        max-width: 100%;
+        height: auto;
     }
 }
