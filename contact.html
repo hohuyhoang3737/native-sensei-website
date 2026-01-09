@@ -1,128 +1,52 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ja="無料体験レッスン予約 - ネイティブ センセイ" data-en="Book a Free Trial - Native Sensei">Book a Free Trial - Native Sensei</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/jfif" href="Media.jfif">
-    <script src="script.js"></script> 
-</head>
-<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;">
-
-    <header class="main-header">
-        <div class="logo-container">
-            <a href="index.html" class="home-link">
-               <img src="Media.jfif" alt="Logo" class="logo-img">
-                <div class="brand-text">
-                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">NATIVE SENSEI</span>
-                </div>
-            </a>
-        </div>
-        <nav class="main-nav">
-            <a href="index.html#program" data-ja="プログラム" data-en="Program">Program</a>
-            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
-            <div class="nav-dropdown">
-                <a href="#" class="dropbtn" data-ja="コース" data-en="Courses">Courses <i class="fas fa-caret-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
-                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
-                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
-                </div>
-            </div>
-            <a href="index.html#pricing" data-ja="授業料" data-en="Tuition Fees">Tuition Fees</a>
-            <a href="contact.html" class="nav-cta-btn" data-ja="無料体験レッスン" data-en="Book a Free Trial">Book a Free Trial</a>
-        </nav>
-        <div class="lang-switcher">
-            <a href="#" class="lang-btn active" onclick="setLanguage('ja'); return false;">日本語</a>
-            <a href="#" class="lang-btn" onclick="setLanguage('en'); return false;">English</a>
-        </div>
-    </header>
-
-    <main style="background: #f4f7f9; padding-bottom: 80px;">
+<section style="max-width: 1000px; margin: 0 auto; padding: 60px 20px 40px;">
+    <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 50px; font-size: 2rem;">Steps to Start</h2>
+    
+    
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; flex-wrap: wrap; gap: 10px;">
         
-        <section style="max-width: 900px; margin: 0 auto; padding: 60px 20px 20px;">
-            <h2 data-ja="受講までの流れ" data-en="Steps to Start" style="text-align: center; color: #0d47a1; margin-bottom: 40px;">Steps to Start</h2>
-            
-            <div style="display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 20px;">
-                <div style="flex: 1; min-width: 150px;">
-                    <div style="background: #0d47a1; color: white; width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">1</div>
-                    <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold; margin: 0;">Send Form</p>
-                </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <div style="background: #0d47a1; color: white; width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">2</div>
-                    <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold; margin: 0;">Consultation</p>
-                </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <div style="background: #0d47a1; color: white; width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">3</div>
-                    <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold; margin: 0;">Free Trial</p>
-                </div>
-                <div style="flex: 1; min-width: 150px;">
-                    <div style="background: #ff5722; color: white; width: 45px; height: 45px; border-radius: 50%; line-height: 45px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">4</div>
-                    <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; margin: 0;">Start Learning</p>
-                </div>
-            </div>
-        </section>
+        <div style="flex: 1; min-width: 140px;">
+            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">1</div>
+            <p data-ja="フォーム送信" data-en="Send Form" style="font-weight: bold; margin: 0; color: #0d47a1;">Send Form</p>
+        </div>
 
-        <section style="padding: 20px;">
-            <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
-                
-                <form action="DÁN_LINK_APPS_SCRIPT_CỦA_BẠN_VÀO_ĐÂY" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-                    <div>
-                        <label data-ja="お名前" data-en="Full Name" style="display: block; font-weight: bold; margin-bottom: 8px;">Full Name</label>
-                        <input type="text" name="name" required placeholder="Họ và tên / Name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box;">
-                    </div>
+        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
+            <i class="fas fa-chevron-right"></i>
+        </div>
 
-                    <div>
-                        <label data-ja="メールアドレス" data-en="Email Address" style="display: block; font-weight: bold; margin-bottom: 8px;">Email Address</label>
-                        <input type="email" name="email" required placeholder="example@gmail.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box;">
-                    </div>
+        <div style="flex: 1; min-width: 140px;">
+            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">2</div>
+            <p data-ja="カウンセリング" data-en="Consultation" style="font-weight: bold; margin: 0; color: #0d47a1;">Consultation</p>
+        </div>
 
-                    <div>
-                        <label data-ja="ご希望のコース" data-en="Interested Course" style="display: block; font-weight: bold; margin-bottom: 8px;">Interested Course</label>
-                        <select name="course" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: white;">
-                            <option value="kids" data-ja="子供向け英語 (Kids)" data-en="Kids English">Kids English</option>
-                            <option value="students" data-ja="学生向け英語 (Students)" data-en="Students English">Students English</option>
-                            <option value="business" data-ja="社会人向け英語 (Business)" data-en="Business English">Business English</option>
-                        </select>
-                    </div>
+        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
+            <i class="fas fa-chevron-right"></i>
+        </div>
 
-                    <div>
-                        <label data-ja="現在の英語レベル" data-en="Current Level" style="display: block; font-weight: bold; margin-bottom: 8px;">Current Level</label>
-                        <select name="level" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: white;">
-                            <option value="beginner" data-ja="初心者" data-en="Beginner">Beginner</option>
-                            <option value="intermediate" data-ja="中級者" data-en="Intermediate">Intermediate</option>
-                            <option value="advanced" data-ja="上級者" data-en="Advanced">Advanced</option>
-                        </select>
-                    </div>
+        <div style="flex: 1; min-width: 140px;">
+            <div style="background: #0d47a1; color: white; width: 50px; height: 50px; border-radius: 50%; line-height: 50px; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(13,71,161,0.3);">3</div>
+            <p data-ja="無料体験" data-en="Free Trial" style="font-weight: bold; margin: 0; color: #0d47a1;">Free Trial</p>
+        </div>
 
-                    <div>
-                        <label data-ja="メッセージ (任意)" data-en="Message (Optional)" style="display: block; font-weight: bold; margin-bottom: 8px;">Message (Optional)</label>
-                        <textarea name="message" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box;"></textarea>
-                    </div>
+        <div class="step-arrow" style="color: #ccc; font-size: 1.5rem; flex: 0.2;">
+            <i class="fas fa-chevron-right"></i>
+        </div>
 
-                    <button type="submit" 
-                            data-ja="無料体験に申し込む" data-en="SUBMIT REGISTRATION"
-                            style="background: #ff5722; color: white; padding: 18px; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(255,87,34,0.4); margin-top: 10px;">
-                        SUBMIT REGISTRATION
-                    </button>
-                </form>
+        <div style="flex: 1; min-width: 140px;">
+            <div style="background: #ff5722; color: white; width: 60px; height: 60px; border-radius: 50%; line-height: 60px; margin: 0 auto 15px; font-weight: bold; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(255,87,34,0.4);">4</div>
+            <p data-ja="受講開始" data-en="Start Learning" style="font-weight: bold; margin: 0; color: #ff5722; font-size: 1.1rem;">Start Learning</p>
+        </div>
 
-                <div style="margin-top: 35px; border-top: 1px dashed #ddd; padding-top: 25px; text-align: center;">
-                    <p data-ja="お急ぎの方はこちら (Zalo / LINE)" data-en="Quick Contact (Zalo / LINE)" style="font-weight: bold; color: #666; margin-bottom: 15px;">Quick Contact (Zalo / LINE)</p>
-                    <div style="display: flex; justify-content: center; gap: 30px;">
-                        <a href="https://zalo.me/818072775984" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" width="45"></a>
-                        <a href="https://line.me/ti/p/hohuyhoang3737" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" width="45"></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>
+</section>
 
-    <footer style="background: #002244; color: white; padding: 40px 20px; text-align: center;">
-        <p>© 2024 Native Sensei English School. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+<style>
+    @media (max-width: 768px) {
+        .step-arrow {
+            transform: rotate(90deg);
+            margin: 10px 0;
+            width: 100%;
+            display: block;
+        }
+    }
+</style>
