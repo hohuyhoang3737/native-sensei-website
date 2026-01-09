@@ -1481,3 +1481,77 @@ a {
     }
 }
 
+/* ============================================================
+   BẢN FIX TỔNG THỂ: HEADER - NỘI DUNG - BẢNG - CONTACT
+   ============================================================ */
+@media (max-width: 768px) {
+    /* 1. CHỐNG HEADER CHE NỘI DUNG (Áp dụng cho mọi trang) */
+    body {
+        /* Đẩy toàn bộ nội dung trang web xuống dưới Header */
+        padding-top: 110px !important; 
+    }
+
+    /* 2. HEADER: Căn bằng nút Courses và Book a Free Trial */
+    .main-header {
+        height: auto !important;
+        min-height: 100px !important; /* Đảm bảo đủ chỗ cho 2 hàng nút */
+    }
+
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important; 
+        justify-content: center !important;
+        gap: 4px !important;
+    }
+
+    /* Ép tất cả thành phần trong Header cao bằng nhau */
+    .main-nav > *, .main-nav a, .nav-cta-btn, .dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 35px !important; 
+        font-size: 0.62rem !important;
+        margin: 0 !important;
+        padding: 0 6px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. ĐỒNG BỘ BẢNG KIDS ENGLISH VỚI CÁC BẢNG KHÁC */
+    .tuition-table-container, .kids-tuition-section table, section#tuition table {
+        width: 100% !important;
+        table-layout: fixed !important; /* Ép dàn đều sát viền */
+        border-collapse: collapse !important;
+        margin: 10px 0 !important;
+    }
+
+    table th, table td {
+        padding: 8px 2px !important;
+        font-size: 0.6rem !important;
+        border: 1px solid #eee !important;
+    }
+
+    /* 4. CONTACT: Ép 4 khung "Steps to Start" lên 1 hàng ngang */
+    /* Hãy đảm bảo class này trùng với thẻ div bao quanh 4 khung trong contact.html */
+    .steps-grid, .steps-container, .contact-steps-row {
+        display: flex !important;
+        flex-direction: row !important; /* Buộc nằm ngang */
+        flex-wrap: nowrap !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 10px 0 !important;
+    }
+
+    .step-item, .contact-step-card {
+        flex: 1 !important; /* Mỗi khung chiếm đúng 1/4 */
+        min-width: 0 !important;
+        padding: 8px 4px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 5px !important;
+        text-align: center !important;
+    }
+
+    .step-item h3 { font-size: 0.55rem !important; margin: 3px 0 !important; }
+    .step-item p { font-size: 0.48rem !important; line-height: 1.1 !important; }
+}
+
