@@ -1681,6 +1681,78 @@ a {
     }
 }
 
+/* ============================================================
+   ÉP CÁC GRID NẰM NGANG TRÊN MOBILE (3 KHUNG & 4 KHUNG)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Ép 3 khung Learning Steps và 4 khung Steps to Start nằm ngang */
+    .steps-grid, 
+    .program-section .steps-grid,
+    .contact-steps-row {
+        display: flex !important;
+        flex-direction: row !important; /* Buộc nằm ngang */
+        flex-wrap: nowrap !important;   /* Tuyệt đối không xuống dòng */
+        gap: 4px !important;            /* Khoảng cách cực nhỏ giữa các khung */
+        padding: 10px 2% !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Cấu hình chung cho mỗi ô item (chia đều 1/3 hoặc 1/4) */
+    .step-item {
+        flex: 1 !important;             /* Chia đều không gian */
+        min-width: 0 !important;        /* Quan trọng: Cho phép khung thu nhỏ hơn nội dung */
+        padding: 10px 4px !important;   /* Padding cực nhỏ */
+        margin: 0 !important;
+        border-radius: 6px !important;
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Thu nhỏ vòng tròn số */
+    .step-number {
+        width: 22px !important;
+        height: 22px !important;
+        font-size: 0.7rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* Thu nhỏ Icon (nếu có) */
+    .step-icon, .icon-solution {
+        font-size: 1.2rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* CHỈNH SIZE CHỮ NHỎ ĐỂ KHÔNG ĐÈ NHAU */
+    .step-item h3 {
+        font-size: 0.6rem !important;   /* Chữ tiêu đề rất nhỏ */
+        line-height: 1.1 !important;
+        margin-bottom: 4px !important;
+        white-space: normal !important; /* Cho phép xuống dòng bên trong khung */
+        text-align: center !important;
+    }
+
+    .step-item p {
+        font-size: 0.55rem !important;  /* Chữ nội dung cực nhỏ */
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        white-space: normal !important; /* Cho phép xuống dòng bên trong khung */
+        text-align: center !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 4;          /* Giới hạn tối đa 4 dòng để không quá dài */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Ẩn các mũi tên trang trí để dành chỗ cho nội dung */
+    .step-arrow, .steps-grid::after {
+        display: none !important;
+    }
+}
 
 
 
