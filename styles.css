@@ -1048,4 +1048,75 @@ a {
     }
 }
 
+/* ============================================================
+   DÁN VÀO DÒNG CUỐI CÙNG CỦA FILE (KHÔNG XÓA CODE CŨ)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. KHÓA TRÀN MÀN HÌNH NGANG */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        position: relative !important;
+    }
+
+    /* 2. FIX HEADER: Ngăn đè chữ và tự cân đối */
+    .main-header {
+        position: relative !important; 
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 5% !important;
+    }
+
+    /* 3. HIỆN MENU: Ép các tab hiện ra ngay ngắn */
+    .main-nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-top: 15px !important;
+        width: 100% !important;
+    }
+
+    .main-nav a {
+        background: #f0f2f5 !important;
+        padding: 8px 12px !important;
+        border-radius: 20px !important;
+        font-size: 0.85rem !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    }
+
+    /* 4. CHỐNG PHÓNG TO ẢNH */
+    .teacher-photo-small, .main-hero-img, .logo-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .teacher-photo-small {
+        width: 130px !important; /* Cố định cỡ ảnh giáo viên */
+    }
+
+    /* 5. ÉP CÁC KHỐI XẾP CHỒNG (Hết tràn ngang) */
+    .hero-section, .problem-list, .solution-grid, .course-grid, .footer-content, .detail-grid {
+        flex-direction: column !important;
+        display: flex !important;
+        padding: 30px 5% !important;
+        align-items: center !important;
+    }
+
+    /* Giữ nguyên bo viền nhưng chiếm hết chiều ngang */
+    .problem-item, .course-card, .step-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix tiêu đề bị to quá làm vỡ khung */
+    h1, h2, .hero-title {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+}
 
