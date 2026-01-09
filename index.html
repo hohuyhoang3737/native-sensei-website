@@ -404,8 +404,41 @@
         <p class="copyright">&copy; 2025 ネイティブ センセイ English School. All Rights Reserved.</p>
     </footer>
 
+<div id="contact-action-sheet" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleActionSheet()" style="background: #ff5722; color: white; border: none; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; font-size: 24px;">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div id="options-sheet" style="display: none; position: absolute; bottom: 80px; right: 0; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.2); width: 220px; overflow: hidden;">
+        <div style="padding: 15px; background: #003366; color: white; text-align: center; font-weight: bold; font-size: 0.9rem;">
+            Liên hệ với chúng tôi
+        </div>
+        <a href="https://zalo.me/08072775984" target="_blank" style="display: flex; align-items: center; padding: 12px 15px; color: #333; border-bottom: 1px solid #eee; transition: 0.3s;">
+            <i class="fas fa-comment" style="color: #0068ff; margin-right: 10px; width: 20px;"></i> Chat qua Zalo
+        </a>
+        <a href="https://m.me/61583662568044" target="_blank" style="display: flex; align-items: center; padding: 12px 15px; color: #333; border-bottom: 1px solid #eee;">
+            <i class="fab fa-facebook-messenger" style="color: #0084ff; margin-right: 10px; width: 20px;"></i> Messenger
+        </a>
+        <a href="https://line.me/ti/p/@hohuyhoang3737" target="_blank" style="display: flex; align-items: center; padding: 12px 15px; color: #333;">
+            <i class="fab fa-line" style="color: #00c300; margin-right: 10px; width: 20px;"></i> Chat qua Line
+        </a>
+    </div>
+</div>
+
+<script>
+function toggleActionSheet() {
+    var sheet = document.getElementById('options-sheet');
+    if (sheet.style.display === 'none') {
+        sheet.style.display = 'block';
+    } else {
+        sheet.style.display = 'none';
+    }
+}
+</script>
+        
 </body>
 </html>
+
 
 
 
