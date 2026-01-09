@@ -1392,4 +1392,88 @@ a {
     }
 }
 
+/* ============================================================
+   HOÀN THIỆN MOBILE - DÁN Ở CUỐI FILE
+   ============================================================ */
+@media (max-width: 768px) {
+    /* 1. HEADER: Ép tất cả nút thẳng hàng tuyệt đối */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important; /* Căn giữa theo chiều dọc */
+        justify-content: center !important;
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+    }
+
+    .main-nav a, .nav-cta-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 30px !important; /* Cố định chiều cao để đều hàng */
+        font-size: 0.65rem !important;
+        margin: 0 !important;
+        padding: 0 8px !important;
+        box-sizing: border-box !important;
+        vertical-align: middle !important;
+    }
+
+    /* 2. TUITION FEES: Xóa sạch khoảng trắng, nới rộng cột bám sát viền */
+    .tuition-table-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    table {
+        width: 100% !important;
+        table-layout: auto !important; /* Cho phép cột tự nới rộng theo nội dung */
+        margin: 0 !important;
+        border-collapse: collapse !important;
+    }
+
+    table th, table td {
+        padding: 8px 4px !important; /* Nới rộng khoảng cách chữ để lấp đầy bảng */
+        font-size: 0.65rem !important;
+        text-align: center !important;
+        border: 1px solid #eee !important;
+    }
+
+    /* Nới rộng cột "Offer" hoặc "Ghi chú" để lấp đầy khoảng trắng */
+    table td:last-child, table th:last-child {
+        width: auto !important;
+    }
+
+    /* 3. CONTACT.HTML: Ép 4 khung lên 1 hàng ngang */
+    /* Giả sử class bao quanh 4 khung là .contact-grid hoặc tương tự */
+    .contact-grid, .contact-methods, .contact-info-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 5px !important;
+        padding: 10px 2% !important;
+    }
+
+    /* 4 khung con (Send Form, Email, Phone, v.v.) */
+    .contact-item, .contact-card, .info-box {
+        flex: 1 !important; /* Chia đều 4 phần bằng nhau */
+        padding: 8px 4px !important;
+        min-width: 0 !important; /* Ngăn vỡ hàng */
+        border-radius: 6px !important;
+        text-align: center !important;
+        border: 1px solid #ddd !important;
+    }
+
+    /* Thu nhỏ chữ cực đại để vừa 4 khung trên 1 hàng */
+    .contact-item h3, .contact-item i {
+        font-size: 0.6rem !important;
+        margin-bottom: 3px !important;
+    }
+
+    .contact-item p, .contact-item a {
+        font-size: 0.55rem !important;
+        word-break: break-all !important; /* Tránh chữ quá dài làm vỡ khung */
+    }
+}
 
