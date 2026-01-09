@@ -1,167 +1,82 @@
-/* =========================================
-   1. THIẾT LẬP GỐC & BIẾN SỐ
-   ========================================= */
+/* --- 1. PHỤC HỒI CẤU TRÚC CHUNG --- */
 :root {
     --primary: #1a237e;
     --secondary: #ff5722;
-    --text: #333;
-    --bg-light: #f5f5f5;
+    --border-light: #e0e0e0;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-    overflow-x: hidden; /* Chặn hoàn toàn vỡ layout ngang */
-}
-
-/* =========================================
-   2. HEADER & MENU (FIX LỖI CHỒNG LẤN)
-   ========================================= */
+/* --- 2. HEADER: CỐ ĐỊNH & CHUẨN MÀU --- */
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    background: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 5%; background: #fff; position: fixed; top: 0; width: 100%;
+    z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+.logo-img { width: 45px !important; height: auto; margin-right: 12px; }
+
+/* --- 3. PHỤC HỒI BO VIỀN & ĐỔ BÓNG (BOX-SHADOW) --- */
+/* Các ô "Problem" hoặc "Course" cần có viền lại */
+.problem-item, .course-card, .step-item {
+    background: #fff;
+    border: 1px solid var(--border-light); /* Khôi phục viền */
+    border-radius: 12px !important; /* Bo góc như cũ */
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Đổ bóng nhẹ cho chuyên nghiệp */
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.problem-item:hover, .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.logo-img {
-    width: 40px !important; /* Cố định kích thước logo */
-    height: 40px !important;
-    margin-right: 10px;
+/* --- 4. FIX ẢNH GIÁO VIÊN & HERO --- */
+.main-hero-img { 
+    max-width: 500px !important; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
 }
 
-.brand-name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--primary);
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.95rem;
-    white-space: nowrap;
-}
-
-.nav-cta-btn {
-    background: var(--secondary);
-    color: white !important;
-    padding: 8px 18px;
-    border-radius: 5px;
-}
-
-/* =========================================
-   3. NỘI DUNG CHÍNH (FIX LỖI PHÓNG TO ẢNH)
-   ========================================= */
-main {
-    padding-top: 80px; /* Đẩy nội dung xuống dưới Header */
-}
-
-.hero-section {
-    display: flex;
-    align-items: center;
-    padding: 60px 5%;
-    background: var(--bg-light);
-}
-
-.main-hero-img {
-    max-width: 450px; /* Chặn ảnh bị phóng to quá mức */
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Fix ảnh giáo viên bị phóng to */
 .teacher-photo-small {
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 50%;
+    width: 140px !important; 
+    height: 140px !important;
+    border-radius: 50% !important;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     object-fit: cover;
-    margin: 0 auto 15px;
 }
 
-.teacher-combined-card {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-}
-
-/* Fix lỗi tràn chữ ở Problem Section */
-.problem-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.problem-item {
-    width: calc(50% - 20px);
-    min-width: 280px;
-    padding: 20px;
-    border: 1px solid #ffcccb;
-    border-radius: 10px;
-}
-
-/* =========================================
-   4. TỐI ƯU CHO ĐIỆN THOẠI (MOBILE)
-   ========================================= */
+/* --- 5. TỐI ƯU MOBILE (MÀ KHÔNG LÀM MẤT BO VIỀN) --- */
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: column !important;
-        padding: 15px 10px !important;
-        height: auto !important;
-        position: relative !important; /* Tránh đè nội dung trên mobile */
+    .main-header { 
+        position: relative !important; 
+        flex-direction: column !important; 
+        text-align: center;
     }
-
-    main { padding-top: 0 !important; }
-
-    .logo-container { margin-bottom: 10px; }
-
-    .main-nav {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
+    
+    .main-nav { 
+        display: flex !important; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 8px; 
+        margin-top: 15px;
     }
 
     .main-nav a {
         background: #f0f2f5;
         padding: 6px 12px !important;
-        border-radius: 15px;
-        font-size: 0.8rem !important;
+        border-radius: 20px;
+        font-size: 0.85rem;
     }
 
-    .hero-section {
+    /* Các section chuyển sang hàng dọc nhưng giữ bo viền */
+    .hero-section, .problem-list, .course-grid {
         flex-direction: column !important;
-        text-align: center;
+        padding: 40px 5% !important;
     }
-
-    .hero-content { margin-bottom: 30px; }
 
     .problem-item, .course-card {
         width: 100% !important;
