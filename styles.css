@@ -1623,6 +1623,63 @@ a {
         text-align: left !important;
     }
 }
+/* ============================================================
+   FIX LỖI ĐÈ CHỮ NATIVE SENSEI'S LEARNING STEPS
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Ép các bước hiển thị theo hàng dọc thay vì hàng ngang */
+    .steps-grid {
+        display: flex !important;
+        flex-direction: column !important; /* Đổi thành hàng dọc để đủ chỗ chứa chữ */
+        gap: 20px !important;
+        padding: 20px 5% !important;
+        width: 100% !important;
+    }
+
+    /* Chỉnh lại khung cho từng bước */
+    .step-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important; /* Bỏ ép chia tỉ lệ ngang */
+        padding: 25px 20px !important;
+        min-height: auto !important; /* Để khung tự cao theo chữ */
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+    }
+
+    /* Thu nhỏ size chữ về mức dễ đọc (tránh quá to) */
+    .step-item h3 {
+        font-size: 1.1rem !important; /* Size tiêu đề vừa phải */
+        margin: 10px 0 !important;
+        color: var(--primary-color) !important;
+        white-space: normal !important; /* Cho phép xuống dòng */
+    }
+
+    .step-item p {
+        font-size: 0.9rem !important; /* Size chữ nội dung chuẩn mobile */
+        line-height: 1.5 !important;
+        color: #555 !important;
+        white-space: normal !important; /* TUYỆT ĐỐI không để nowrap */
+        display: block !important;
+    }
+
+    /* Chỉnh lại vòng tròn số cho cân đối */
+    .step-number {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.2rem !important;
+        margin: 0 auto 15px auto !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ẩn các icon mũi tên nếu có (vì đang xếp hàng dọc) */
+    .step-arrow {
+        display: none !important;
+    }
+}
 
 
 
