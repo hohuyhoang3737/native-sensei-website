@@ -1,45 +1,52 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ja="学生向け英語 - ネイティブ センセイ" data-en="Students English - Native Sensei">Students English - Native Sensei</title>
+    <title data-ja="ネイティブ センセイ English School: コスパ最強のオンラインレッスン" data-en="Native Sensei English School: High-Quality Online Lessons">ネイティブ センセイ English School: コスパ最強のオンラインレッスン</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/jfif" href="Media.jfif">
+    <link rel="apple-touch-icon" href="Media.jfif">
     <script src="script.js"></script> 
 </head>
 <body>
 
     <header class="main-header">
         <div class="logo-container">
-            <a href="index.html" class="home-link">
-               <img src="Media.jfif" alt="Logo" class="logo-img">
+            <a href="/" class="home-link">
+               <img src="Media.jfif" alt="Native Sensei English School Logo" class="logo-img">
                 <div class="brand-text">
                     <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">ネイティブ センセイ</span>
                     <span class="sub-brand" data-ja="オンライン英会話スクール" data-en="Online English School">Online English School</span>
                 </div>
             </a>
         </div>
-        <nav class="main-nav">
-            <a href="index.html#program" data-ja="プログラム" data-en="Program">プログラム</a>
-            <a href="index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
-            <div class="nav-dropdown">
-                <a href="#" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
-                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
-                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
-                </div>
-            </div>
-            <a href="index.html#pricing" data-ja="授業料" data-en="Tuition Fees">授業料</a>
+   <nav class="main-nav">
+    <a href="#program" data-ja="プログラム" data-en="Program">プログラム</a>
+    <a href="#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+    
+    <div class="nav-dropdown">
+        <a href="#courses" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
+            <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
+            <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
+          
+        </div>
+    </div>
+    
+
+            <a href="#pricing" data-ja="授業料" data-en="Tuition Fees">授業料</a>
             <a href="contact.html" data-ja="無料体験レッスン" data-en="Book a Free Trial" class="nav-cta-btn">無料体験レッスン</a>
         </nav>
+        
         <div class="lang-switcher">
-            <a href="#" class="lang-btn active" onclick="setLanguage('ja'); return false;">日本語</a>
-            <a href="#" class="lang-btn" onclick="setLanguage('en'); return false;">English</a>
+            <a href="#" class="lang-btn active" data-lang-code="ja" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" data-lang-code="en" onclick="setLanguage('en'); return false;">English</a>
         </div>
     </header>
+
 
     <section class="course-detail-hero" style="background: #e8f5e9; padding: 100px 20px; text-align: center;">
         <div class="container">
