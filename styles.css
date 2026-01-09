@@ -1619,3 +1619,53 @@ a {
         display: none !important; /* Ẩn mũi tên để đủ chỗ cho 4 khung */
     }
 }
+
+/* ============================================================
+   FIX MENU COURSES BỊ KHUẤT TRÊN MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Cho phép Header hiển thị nội dung tràn ra ngoài (để lộ menu con) */
+    .main-header {
+        overflow: visible !important; 
+        z-index: 10000 !important;
+    }
+
+    /* Đảm bảo khung chứa các nút cũng không cắt cụt menu con */
+    .main-nav {
+        overflow: visible !important;
+        position: relative !important;
+    }
+
+    /* Chỉnh vị trí và độ nổi của Menu sổ xuống (Dropdown) */
+    .main-nav .dropdown-menu, 
+    .main-nav ul, 
+    .main-nav .submenu {
+        position: absolute !important;
+        top: 100% !important; /* Hiển thị ngay sát dưới nút Courses */
+        left: 0 !important;
+        background: white !important;
+        min-width: 150px !important;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+        z-index: 99999 !important; /* Ép nổi lên trên cùng */
+        display: none; /* Mặc định ẩn, sẽ hiện khi click/hover */
+        border-radius: 8px !important;
+        padding: 10px 0 !important;
+    }
+
+    /* Hiển thị menu khi được kích hoạt (tùy thuộc vào class bạn dùng trong script.js) */
+    .main-nav .dropdown:hover .dropdown-menu,
+    .main-nav .dropdown.active .dropdown-menu {
+        display: block !important;
+    }
+
+    /* Chỉnh chữ trong menu con cho dễ bấm */
+    .main-nav .dropdown-menu a {
+        color: #333 !important;
+        padding: 10px 20px !important;
+        font-size: 0.8rem !important;
+        display: block !important;
+        border: none !important; /* Bỏ viền nút của mobile để nhìn giống menu */
+        height: auto !important;
+        text-align: left !important;
+    }
+}
