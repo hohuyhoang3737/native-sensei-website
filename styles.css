@@ -1300,4 +1300,96 @@ a {
     }
 }
 
+/* ============================================================
+   TỐI ƯU CHI TIẾT MOBILE - DÁN Ở CUỐI FILE
+   ============================================================ */
+@media (max-width: 768px) {
+    /* 1. HEADER: Làm nổi bật nút và chỉnh thẳng hàng */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important; /* Cho phép vuốt ngang nhẹ nếu quá dài */
+        gap: 4px !important;
+        align-items: center !important;
+        padding: 5px 0 !important;
+    }
+
+    .main-nav a {
+        font-size: 0.65rem !important;
+        padding: 5px 8px !important;
+        border: 1px solid #ddd !important; /* Tạo bo viền cho nút */
+        border-radius: 6px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+        white-space: nowrap !important;
+    }
+
+    /* Nút đăng ký: Màu cam nổi bật, thẳng hàng */
+    .nav-cta-btn {
+        background-color: #ff5722 !important;
+        color: white !important;
+        border: none !important;
+        font-weight: bold !important;
+        margin-left: 2px !important;
+    }
+
+    /* 3, 4, 5. ÉP CÁC KHỐI THÀNH 1 HÀNG NGANG (Hẹp ngang, dài dọc) */
+    /* Áp dụng cho: Our Solution, Learning Steps, và Course Catalog */
+    .solution-grid, .steps-grid, .course-grid, .catalog-grid {
+        display: flex !important;
+        flex-direction: row !important; /* Ép nằm ngang */
+        gap: 6px !important;
+        padding: 10px 2% !important;
+        align-items: stretch !important;
+    }
+
+    /* Định dạng chung cho các khung con bên trong */
+    .solution-item, .step-item, .course-card {
+        flex: 1 !important; /* Chia đều chiều ngang màn hình */
+        padding: 10px 5px !important;
+        border-radius: 8px !important;
+        min-width: 0 !important; /* Quan trọng để không bị vỡ hàng */
+    }
+
+    /* Thu nhỏ chữ cực đại để nhét vừa 3 khung */
+    .solution-item h3, .step-item h3, .course-card h3 {
+        font-size: 0.65rem !important;
+        margin-bottom: 5px !important;
+        line-height: 1.1 !important;
+    }
+
+    .solution-item p, .step-item p, .course-card p {
+        font-size: 0.55rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 6. BẢNG HỌC PHÍ: Dàn hết 100% màn hình, xóa khoảng trắng phải */
+    .tuition-table-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: auto !important;
+    }
+
+    table {
+        width: 100% !important;
+        margin: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important; /* Ép bảng bám sát lề */
+    }
+
+    table th, table td {
+        padding: 6px 2px !important;
+        font-size: 0.6rem !important;
+    }
+
+    /* 2. Giữ 4 khung Problems ở dạng 2x2 cho dễ đọc */
+    .problem-list {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+}
+
 
