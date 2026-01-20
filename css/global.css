@@ -649,10 +649,13 @@ a {
     padding: 20px 2%;
     /* margin-bottom: 30px; */
  }
- /* .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
- } */
+ .container {
+    text-align: center;
+    padding: 80px 5%;
+    /* margin-left: 50px; */
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+ }
 
 .courses-section h2 {
     font-size: 2rem;
