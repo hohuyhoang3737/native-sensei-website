@@ -73,23 +73,39 @@
 
     <header class="main-header">
         <div class="logo-container">
-            <a href="../index.html" class="home-link">
-               <img src="../assets/Media.jfif" alt="Logo" class="logo-img">
+            <a href="/" class="home-link">
+                <img src="../assets/Media.jfif" alt="Logo" class="logo-img">
                 <div class="brand-text">
-                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">NATIVE SENSEI</span>
+                    <span class="brand-name" data-ja="ネイティブ センセイ" data-en="NATIVE SENSEI">ネイティブ センセイ</span>
                 </div>
             </a>
         </div>
-        <nav class="main-nav">
-            <a href="../index.html#program" data-ja="プログラム" data-en="Program">Program</a>
-            <a href="../index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
-            <a href="../index.html#pricing" data-ja="授業料" data-en="Tuition Fees">Tuition Fees</a>
-            <a href="pages/contact.html" class="nav-cta-btn" data-ja="無料体験レッスン" data-en="Book a Free Trial">Book a Free Trial</a>
-        </nav>
+
         <div class="lang-switcher">
-            <a href="#" class="lang-btn active" onclick="setLanguage('ja'); return false;">日本語</a>
-            <a href="#" class="lang-btn" onclick="setLanguage('en'); return false;">English</a>
+            <a href="#" class="lang-btn active" data-lang-code="ja" onclick="setLanguage('ja'); return false;">日本語</a>
+            <a href="#" class="lang-btn" data-lang-code="en" onclick="setLanguage('en'); return false;">English</a>
         </div>
+
+        <button class="mobile-toggle-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="../index.html#program" data-ja="プログラム" data-en="Program">プログラム</a>
+            <a href="../index.html#teachers" data-ja="講師紹介" data-en="Teachers">Teachers</a>
+            <a href="#courses" class="course-btn-mobile" data-ja="コース" data-en="Courses">Courses</a>
+            <div class="nav-dropdown">
+                <a href="../index.html#courses" data-ja="コース" data-en="Courses" class="dropbtn">Courses <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="kids.html" data-ja="子供向け (1対1)" data-en="Kids (1-on-1)">Kids (1-on-1)</a>
+                    <a href="students.html" data-ja="学生向け (1対1)" data-en="Students (1-on-1)">Students (1-on-1)</a>
+                    <a href="business.html" data-ja="社会人向け (1対1)" data-en="Professionals (1-on-1)">Professionals (1-on-1)</a>
+                
+                </div>
+            </div>
+            <a href="../index.html#pricing" data-ja="授業料" data-en="Tuition Fees">授業料</a>
+            <a href="contact.html" data-ja="無料体験レッスン" data-en="Book a Free Trial" class="nav-cta-btn">無料体験レッスン</a>
+        </nav>
     </header>
 
     <main>

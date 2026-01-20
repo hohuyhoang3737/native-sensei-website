@@ -277,6 +277,7 @@ a {
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
     text-transform: uppercase;
+    margin-bottom: 50px;
 }
 
 .main-cta-btn:hover {
@@ -622,14 +623,36 @@ a {
     flex-shrink: 0;
     background-color: var(--secondary-color);
 }
+.ai-generated-img {
+    display: block;       /* Biến ảnh thành khối để dùng được margin auto */
+    margin-left: auto;    /* Căn giữa bên trái */
+    margin-right: auto;   /* Căn giữa bên phải */
+    margin-top: 5%;
+    /* margin-bottom: 5%; */
+    min-width: 40%;       /* Độ rộng tối thiểu là 40% của phần tử cha */
+    height: auto;         /* Giữ đúng tỉ lệ khung hình của ảnh */
+    max-width: 100%;
 
-
+}
 /* PHẦN 6: CÁC KHÓA HỌC CHÍNH (Đã được thêm vào index.html ở bước trước) */
-.courses-section {
+/* .courses-section  {
     padding: 80px 5%;
     text-align: center;
     background-color: var(--light-bg); 
-}
+} */
+ .courses-section-1 { 
+    /* padding: 80px 5%; */
+    margin-left: 10%;
+ }
+ .course-features {
+    /* margin-top: 30px; */
+    padding: 20px 2%;
+    /* margin-bottom: 30px; */
+ }
+ /* .container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+ } */
 
 .courses-section h2 {
     font-size: 2rem;
@@ -911,6 +934,7 @@ a {
         /* padding: 20px 20px; */
         margin-left: 10px;
         margin-right: 10px;
+        margin-bottom: 15px;
     }
     .cta-note {
         margin-top: 10px;
@@ -1059,7 +1083,53 @@ a {
     .program-section h2 {
         font-size: 1rem;
         color: var(--primary-color);
-        /* margin-bottom: -200px; */
+        margin-bottom: 50px;
     }
-
+    .courses-section-1 { 
+        padding: 20px 5%;
+        margin-left: 0%;
+        margin-top: auto;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        text-align: left !important;
+        /* align-items: center; */
+        /* justify-content: left; */
+        /* justify-items: center; */
+    }
+    .courses-btn {
+        display: flex !important;
+        flex-direction: column !important; /* Ép 2 thẻ a xếp thành 1 cột dọc */
+        align-items: center !important;    /* Căn giữa 2 thẻ a theo chiều ngang */
+        justify-content: center !important; /* Căn giữa theo chiều dọc nếu có height */
+        gap: 10px !important;              /* Khoảng cách giữa thẻ trên và thẻ dưới */
+        width: 100% !important;
+    }
+    .ai-generated-img {
+        margin-top: 60px;
+        margin-bottom: auto;
+        /* margin-bottom: 5%; */
+        min-width: 40%;       /* Độ rộng tối thiểu là 40% của phần tử cha */
+        height: auto;         /* Giữ đúng tỉ lệ khung hình của ảnh */
+        max-width: 100%;
+        padding: auto;
+    }
+    /* .feature-item{
+        margin-top: 200px;
+    }
+    .secondary-cta-btn {
+        margin-top: 200px;
+    } */
+    .course-features {
+        /* margin-top: 30px; */
+        margin-top: 70px;
+        /* margin-bottom: 30px; */
+    }
+    .course-features-kids {
+        /* margin-top: 30px; */
+        margin-top: 10px;
+        /* margin-bottom: 30px; */
+    }
+    .container {
+        padding: 20px;
+    }
 }

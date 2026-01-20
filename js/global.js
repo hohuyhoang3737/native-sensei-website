@@ -86,28 +86,50 @@ function toggleMobileMenu() {
     }
 }
 
-// Xử lý đóng/mở Dropdown bằng class .nav-dropdown
-document.addEventListener('click', function(e) {
-    // 1. Kiểm tra nếu người dùng bấm vào khối .nav-dropdown hoặc con của nó
-    const dropdown = e.target.closest('.nav-dropdown');
-    
-    if (dropdown && window.innerWidth <= 768) {
-        // Nếu bấm vào chính xác vùng chứa menu Courses
-        e.preventDefault();
-        e.stopPropagation(); // Ngăn menu bị đóng ngay lập tức
-        dropdown.classList.toggle('is-open');
-    } else {
-        // 2. Nếu bấm ra ngoài .nav-dropdown, đóng menu con lại
-        document.querySelectorAll('.nav-dropdown').forEach(d => {
-            d.classList.remove('is-open');
-        });
-    }
-    
-    // 3. Đóng Menu chính khi bấm ra ngoài Header
-    const header = document.querySelector('.main-header');
+function toggleMobileMenu() {
     const nav = document.getElementById('mainNav');
+    nav.classList.toggle('active');
+    
+    const icon = document.querySelector('.mobile-toggle-btn i');
+    if (nav.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+    } else {
+        icon.className = 'fas fa-bars';
+    }
+}
+
+document.addEventListener('click', function(e) {
+    const dropdown = e.target.closest('.nav-dropdown');
+    const nav = document.getElementById('mainNav');
+    const toggleBtn = document.querySelector('.mobile-toggle-btn');
+
+    // 1. XỬ LÝ KHI BẤM VÀO MENU "COURSES" (NÚT CHA)
+    // Kiểm tra nếu bấm vào dropbtn hoặc chính thẻ chứa dropdown nhưng KHÔNG phải link con
+    if (dropdown && e.target.closest('.dropbtn') && window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('is-open');
+        return; // Dừng lại ở đây, không chạy xuống logic đóng menu dưới
+    }
+
+    // 2. XỬ LÝ KHI CHỌN XONG MENU (Bấm vào các link <a>)
+    // Nếu bấm vào một link <a> bất kỳ (trong menu chính hoặc menu con)
+    if (e.target.tagName === 'A' && nav.contains(e.target)) {
+        // Đóng menu chính
+        nav.classList.remove('active');
+        // Đóng luôn các dropdown con đang mở (nếu có)
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
+        // Đổi lại icon về 3 gạch
+        document.querySelector('.mobile-toggle-btn i').className = 'fas fa-bars';
+        
+        // Để trình duyệt tự chuyển trang (không dùng preventDefault ở đây)
+    }
+
+    // 3. ĐÓNG MENU KHI BẤM RA NGOÀI VÙNG HEADER
+    const header = document.querySelector('.main-header');
     if (!header.contains(e.target) && nav.classList.contains('active')) {
         nav.classList.remove('active');
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('is-open'));
         document.querySelector('.mobile-toggle-btn i').className = 'fas fa-bars';
     }
 });
