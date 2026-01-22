@@ -643,6 +643,7 @@ a {
  .courses-section-1 { 
     /* padding: 80px 5%; */
     margin-left: 10%;
+    text-align: left;
  }
  .course-features {
     /* margin-top: 30px; */
@@ -702,6 +703,8 @@ a {
 }
 
 .course-card h3 {
+    content: attr(data-en);
+    white-space: pre-wrap;
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-top: 0;
@@ -930,6 +933,7 @@ a {
     .hero-content {
         flex: 1;
         max-width: 90%;
+        text-align: center !important; 
     }
     .main-cta-btn {
         font-size: 0.9rem;
@@ -1127,6 +1131,10 @@ a {
         margin-top: 70px;
         /* margin-bottom: 30px; */
     }
+    .container h2 {
+        font-size: 1.2em !important;
+        margin-bottom: 30px !important;
+    }
     .course-features-kids {
         /* margin-top: 30px; */
         margin-top: 10px;
@@ -1134,5 +1142,9 @@ a {
     }
     .container {
         padding: 20px;
+    }
+    .detail-content h1 {
+        text-align: center;
+        font-size: 1.5em; 
     }
 }
